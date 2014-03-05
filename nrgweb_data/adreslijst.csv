@@ -1,0 +1,500 @@
+Kalverstraat;2;;Groningen;9711AA;1;jan@home.nl;0612345678;aaaa
+Hoofdstraat;1;;Groningen;9711AB;1;jan@home.nl;0612345679;aaaa
+Eerstestraat;3;;Groningen;9711AC;1;jan@home.nl;0612345680;aaaa
+Tweedestraat;45;a;Groningen;9711AD;1;jan@home.nl;0612345681;aaaa
+Derdestraat;2;;Groningen;9711AE;1;jan@home.nl;0612345682;aaaa
+Vierdestraat;3;;Groningen;9711AF;1;jan@home.nl;0612345683;aaaa
+Vijfdestraat;4;;Groningen;9711AG;2;jan@home.nl;0612345684;aaaa
+Zesdestraat;5;;Groningen;9711AH;2;jan@home.nl;0612345685;aaaa
+Nieuwestraat;9;;Groningen;9711AI;2;jan@home.nl;0612345686;aaaa
+Oudestraat;77;;Groningen;9711AJ;2;jan@home.nl;0612345687;aaaa
+Driehoekstraat;6;;Groningen;9711AK;3;jan@home.nl;0612345688;aaaa
+van Nassaustraat;145;a;Groningen;9711AL;3;jan@home.nl;0612345689;aaaa
+van Damstraat;4;;Groningen;9711AM;4;jan@home.nl;0612345690;aaaa
+Eringastraat;4;;Groningen;9711AN;5;jan@home.nl;0612345691;aaaa
+Kloosterstraat;3;;Groningen;9711AO;5;jan@home.nl;0612345692;aaaa
+Moeskerstraat;4;;Groningen;9711AP;5;jan@home.nl;0612345693;aaaa
+Hooghoudtstraat;2;;Groningen;9711AQ;5;jan@home.nl;0612345694;aaaa
+Jakobsstraat;2;;Groningen;9711AR;5;jan@home.nl;0612345695;aaaa
+Willemsstraat;2;;Groningen;9711AS;4;jan@home.nl;0612345696;aaaa
+Beatrixstraat;1;;Groningen;9711AT;4;jan@home.nl;0612345697;aaaa
+Julianastraat;1;;Groningen;9711AV;4;jan@home.nl;0612345698;aaaa
+Wilhelminastraat;1;;Groningen;9711AU;4;jan@home.nl;0612345699;aaaa
+Amaliastraat;1;;Groningen;9711AW;4;jan@home.nl;0612345700;aaaa
+Rozenstraat;8;;Groningen;9711AX;4;jan@home.nl;0612345701;aaaa
+Dennenstraat;1;;Groningen;9711AY;4;jan@home.nl;0612345702;aaaa
+Bloemenstraat;15;;Groningen;9711AZ;4;jan@home.nl;0612345703;aaaa
+Dahliastraat;99;a;Groningen;9711BA;6;jan@home.nl;0612345704;aaaa
+Begoniastraat;79;a;Groningen;9711BB;6;jan@home.nl;0612345705;aaaa
+Akeleistraat;9;;Groningen;9711BC;6;jan@home.nl;0612345706;aaaa
+Kierstraat;8;;Groningen;9711BD;6;jan@home.nl;0612345707;aaaa
+Kijkduinstraat;6;;Groningen;9711BE;6;jan@home.nl;0612345708;aaaa
+Beukenstraat;5;;Groningen;9711BF;6;jan@home.nl;0612345709;aaaa
+Eikenstraat;43;;Groningen;9711BG;6;jan@home.nl;0612345710;aaaa
+Rododendronstraat;2;;Groningen;9711BH;4;jan@home.nl;0612345711;aaaa
+Fiekusstraat;2;;Groningen;9711BI;4;jan@home.nl;0612345712;aaaa
+Houtzagerstraat;3;;Groningen;9711BJ;4;jan@home.nl;0612345713;aaaa
+Steenbakkerstraat;6;;Groningen;9711BK;4;jan@home.nl;0612345714;aaaa
+Wolkammerstraat;7;;Groningen;9711BL;4;jan@home.nl;0612345715;aaaa
+Frisostraat;8;;Groningen;9711BM;4;jan@home.nl;0612345716;aaaa
+Alexanderstraat;9;;Groningen;9711BN;4;jan@home.nl;0612345717;aaaa
+Constantijnstraat;9;;Groningen;9711BO;4;jan@home.nl;0612345718;aaaa
+Tussenstraat;6;;Leeuwarden;8913AA;4;jan@home.nl;0612345719;aaaa
+Achterstraat;6;;Leeuwarden;8913AB;4;jan@home.nl;0612345720;aaaa
+Voorstraat;43;;Leeuwarden;8913AC;4;jan@home.nl;0612345721;aaaa
+Kanaalstraat;5;;Leeuwarden;8913AD;4;jan@home.nl;0612345722;aaaa
+Rivierstraat;4;;Leeuwarden;8913AE;3;jan@home.nl;0612345723;aaaa
+Meerstraat;6;;Leeuwarden;8913AF;3;jan@home.nl;0612345724;aaaa
+Zeestraat;42;;Leeuwarden;8913AG;3;jan@home.nl;0612345725;aaaa
+Asserstraat;4;;Leeuwarden;8913AH;3;jan@home.nl;0612345726;aaaa
+Groningerstraat;2;;Leeuwarden;8913AI;3;jan@home.nl;0612345727;aaaa
+Drachtsestraat;47;;Leeuwarden;8913AJ;3;jan@home.nl;0612345728;aaaa
+Heidestraat;67;;Leeuwarden;8913AK;3;jan@home.nl;0612345729;aaaa
+Kerkstraat;99;;Leeuwarden;8913AL;2;jan@home.nl;0612345730;aaaa
+Baronstraat;8;;Leeuwarden;8913AM;2;jan@home.nl;0612345731;aaaa
+Gravinstraat;9;;Leeuwarden;8913AN;2;jan@home.nl;0612345732;aaaa
+Koningstraat;63;;Leeuwarden;8913AO;2;jan@home.nl;0612345733;aaaa
+Koninginstraat;5;;Leeuwarden;8913AP;23;jan@home.nl;0612345734;aaaa
+Sint janstraat;5;;Leeuwarden;8913AQ;3;jan@home.nl;0612345735;aaaa
+Sint Nicolaasstraat;5;;Leeuwarden;8913AR;3;jan@home.nl;0612345736;aaaa
+Sint Antoniusstraat;77;;Leeuwarden;8913AS;3;jan@home.nl;0612345737;aaaa
+Van Deijnestraat;3;;Leeuwarden;8913AT;3;jan@home.nl;0612345738;aaaa
+Langestraat;3;;Leeuwarden;8913AV;6;jan@home.nl;0612345739;aaaa
+Kortestraat;6;;Leeuwarden;8913AU;6;jan@home.nl;0612345740;aaaa
+Sint Andreusstraat;7;;Leeuwarden;8913AW;6;jan@home.nl;0612345741;aaaa
+Touwslagerstraat;7;;Leeuwarden;8913AX;6;jan@home.nl;0612345742;aaaa
+Stoeldraaierstraat;123;;Leeuwarden;8913AY;7;jan@home.nl;0612345743;aaaa
+Houthakkerstraat;6;;Leeuwarden;8913AZ;8;jan@home.nl;0612345744;aaaa
+van Lennepstraat;6;;Leeuwarden;8913BA;8;jan@home.nl;0612345745;aaaa
+van Damstraat;3;;Leeuwarden;8913BB;7;jan@home.nl;0612345746;aaaa
+De Wittstraat;58;;Leeuwarden;8913BC;8;jan@home.nl;0612345747;aaaa
+Dieverstraat;67;;Leeuwarden;8913BD;7;jan@home.nl;0612345748;aaaa
+Tilburgsestraat;45;;Leeuwarden;8913BE;8;jan@home.nl;0612345749;aaaa
+Amsterdamsestraat;47;;Leeuwarden;8913BF;3;jan@home.nl;0612345750;aaaa
+Rotterdamsestraat;6;;Leeuwarden;8913BG;3;jan@home.nl;0612345751;aaaa
+Drentsestraat;7;;Leeuwarden;8913BH;3;jan@home.nl;0612345752;aaaa
+Friesestraat;4;;Leeuwarden;8913BI;4;jan@home.nl;0612345753;aaaa
+Twentsestraat;3;;Leeuwarden;8913BJ;5;jan@home.nl;0612345754;aaaa
+Haagsestraat;58;;Leeuwarden;8913BK;6;jan@home.nl;0612345755;aaaa
+Haarlemmerstraat;5;;Leeuwarden;8913BL;6;jan@home.nl;0612345756;aaaa
+Haarlemsestraat;3;b;Leeuwarden;8913BM;6;jan@home.nl;0612345757;aaaa
+Zandvoortsestraat;53;;Leeuwarden;8913BN;6;jan@home.nl;0612345758;aaaa
+Protonstraat;42;;Leeuwarden;8913BO;5;jan@home.nl;0612345759;aaaa
+Elektronstraat;42;;Leeuwarden;8913BP;3;jan@home.nl;0612345760;aaaa
+Mikronstraat;4;;Leeuwarden;8913BQ;2;jan@home.nl;0612345761;aaaa
+Uraniumstraat;2;;Leeuwarden;8913BR;12;jan@home.nl;0612345762;aaaa
+Plutoniumstraat;42;;Leeuwarden;8913BS;12;jan@home.nl;0612345763;aaaa
+Germaniumstraat;4;;Leeuwarden;8913BT;3;jan@home.nl;0612345764;aaaa
+Siliciumstraat;24;;Leeuwarden;8913BV;4;jan@home.nl;0612345765;aaaa
+Galliumstraat;4;;Leeuwarden;8913BU;5;jan@home.nl;0612345766;aaaa
+Boriumstraat;6;;Leeuwarden;8913BW;1;jan@home.nl;0612345767;aaaa
+Platinastraat;86;;Leeuwarden;8913BX;2;jan@home.nl;0612345768;aaaa
+Goudstraat;3;;Leeuwarden;8913BY;2;jan@home.nl;0612345769;aaaa
+Zilverstraat;3;;Leeuwarden;8913BZ;2;jan@home.nl;0612345770;aaaa
+Diamantstraat;5;;Leeuwarden;8913CA;2;jan@home.nl;0612345771;aaaa
+Robijnstraat;2;;Leeuwarden;8913CB;2;jan@home.nl;0612345772;aaaa
+Travetijnstraat;5;;Leeuwarden;8913CC;2;jan@home.nl;0612345773;aaaa
+Emeraldstraat;5;;Leeuwarden;8913CD;3;jan@home.nl;0612345774;aaaa
+Admiraalstraat;9;;Leeuwarden;8913CE;4;jan@home.nl;0612345775;aaaa
+Generaalstraat;9;a;Leeuwarden;8913CF;5;jan@home.nl;0612345776;aaaa
+Keizerstraat;7;;Leeuwarden;8913CG;6;jan@home.nl;0612345777;aaaa
+Kalverweg;5;;Leeuwarden;8913CH;6;jan@home.nl;0612345778;aaaa
+Hoofdweg;4;;Leeuwarden;8913CI;2;jan@home.nl;0612345779;aaaa
+Eersteweg;6;;Leeuwarden;8913CJ;2;jan@home.nl;0612345780;aaaa
+Tweedeweg;4;;Leeuwarden;8913CK;2;jan@home.nl;0612345781;aaaa
+Derdeweg;6;;Leeuwarden;8913CL;2;jan@home.nl;0612345782;aaaa
+Vierdeweg;8;;Leeuwarden;8913CM;2;jan@home.nl;0612345783;aaaa
+Vijfdeweg;22;;Leeuwarden;8913CN;4;jan@home.nl;0612345784;aaaa
+Zesdeweg;4;;Leeuwarden;8913CO;4;jan@home.nl;0612345785;aaaa
+Nieuweweg;4;;Leeuwarden;8913CP;5;jan@home.nl;0612345786;aaaa
+Oudeweg;8;;Leeuwarden;8913CQ;5;jan@home.nl;0612345787;aaaa
+Driehoekweg;3;;Leeuwarden;8913CR;5;jan@home.nl;0612345788;aaaa
+van Nassauweg;5;;Leeuwarden;8913CS;5;jan@home.nl;0612345789;aaaa
+van Damweg;6;b;Leeuwarden;8913CT;5;jan@home.nl;0612345790;aaaa
+Eringaweg;2;;Leeuwarden;8913CV;5;jan@home.nl;0612345791;aaaa
+Kloosterweg;4;;Leeuwarden;8913CU;5;jan@home.nl;0612345792;aaaa
+Moeskerweg;4;;Leeuwarden;8913CW;4;jan@home.nl;0612345793;aaaa
+Hooghoudtweg;8;;Leeuwarden;8913CX;4;jan@home.nl;0612345794;aaaa
+Jakobsweg;42;;Leeuwarden;8913CY;4;jan@home.nl;0612345795;aaaa
+Willemsweg;4;;Leeuwarden;8913CZ;4;jan@home.nl;0612345796;aaaa
+Beatrixweg;2;;Leeuwarden;8913CA;4;jan@home.nl;0612345797;aaaa
+Julianaweg;47;;Leeuwarden;8913CB;4;jan@home.nl;0612345798;aaaa
+Wilhelminaweg;67;;Leeuwarden;8913CC;4;jan@home.nl;0612345799;aaaa
+Amaliaweg;99;;Leeuwarden;8913CD;4;jan@home.nl;0612345800;aaaa
+Rozenweg;8;;Leeuwarden;8913CE;4;jan@home.nl;0612345801;aaaa
+Dennenweg;9;;Leeuwarden;8913CF;4;jan@home.nl;0612345802;aaaa
+Bloemenweg;63;;Leeuwarden;8913CG;4;jan@home.nl;0612345803;aaaa
+Dahliaweg;5;;Leeuwarden;8913CH;4;jan@home.nl;0612345804;aaaa
+Begoniaweg;5;;Leeuwarden;8913CI;3;jan@home.nl;0612345805;aaaa
+Akeleiweg;5;;Leeuwarden;8913CJ;3;jan@home.nl;0612345806;aaaa
+Kierweg;77;;Leeuwarden;8913CK;3;jan@home.nl;0612345807;aaaa
+Kijkduinweg;3;;Leeuwarden;8913CL;3;jan@home.nl;0612345808;aaaa
+Beukenweg;3;;Assen;9405AA;3;jan@home.nl;0612345809;aaaa
+Eikenweg;6;;Assen;9405AB;3;jan@home.nl;0612345810;aaaa
+Rododendronweg;7;;Assen;9405AC;3;jan@home.nl;0612345811;aaaa
+Fiekusweg;7;;Assen;9405AD;3;jan@home.nl;0612345812;aaaa
+Houtzagerweg;123;;Assen;9405AE;3;jan@home.nl;0612345813;aaaa
+Steenbakkerweg;6;;Assen;9405AF;3;jan@home.nl;0612345814;aaaa
+Wolkammerweg;6;;Assen;9405AG;3;jan@home.nl;0612345815;aaaa
+Frisoweg;3;;Assen;9405AH;2;jan@home.nl;0612345816;aaaa
+Alexanderweg;58;;Assen;9405AI;2;jan@home.nl;0612345817;aaaa
+Constantijnweg;67;;Assen;9405AJ;2;jan@home.nl;0612345818;aaaa
+Tussenweg;45;;Assen;9405AK;2;jan@home.nl;0612345819;aaaa
+Achterweg;45;a;Assen;9405AL;2;jan@home.nl;0612345820;aaaa
+Voorweg;2;;Assen;9405AM;4;jan@home.nl;0612345821;aaaa
+Kanaalweg;3;;Assen;9405AN;3;jan@home.nl;0612345822;aaaa
+Rivierweg;4;;Assen;9405AO;5;jan@home.nl;0612345823;aaaa
+Meerweg;5;;Assen;9405AP;5;jan@home.nl;0612345824;aaaa
+Zeeweg;9;;Assen;9405AQ;3;jan@home.nl;0612345825;aaaa
+Asserweg;77;;Assen;9405AR;3;jan@home.nl;0612345826;aaaa
+Groningerweg;6;;Assen;9405AS;3;jan@home.nl;0612345827;aaaa
+Drachtseweg;145;;Assen;9405AT;3;jan@home.nl;0612345828;aaaa
+Heideweg;4;;Assen;9405AV;;jan@home.nl;0612345829;aaaa
+Kerkweg;4;;Assen;9405AU;5;jan@home.nl;0612345830;aaaa
+Baronweg;3;;Assen;9405AW;5;jan@home.nl;0612345831;aaaa
+Gravinweg;4;;Assen;9405AX;5;jan@home.nl;0612345832;aaaa
+Koningweg;2;;Assen;9405AY;5;jan@home.nl;0612345833;aaaa
+Koninginweg;2;;Assen;9405AZ;5;jan@home.nl;0612345834;aaaa
+Sint janweg;2;;Assen;9405BA;5;jan@home.nl;0612345835;aaaa
+Sint Nicolaasweg;1;;Assen;9405BB;5;jan@home.nl;0612345836;aaaa
+Sint Antoniusweg;1;;Assen;9405BC;5;jan@home.nl;0612345837;aaaa
+Van Deijneweg;1;;Assen;9405BD;4;jan@home.nl;0612345838;aaaa
+Langeweg;1;;Assen;9405BE;2;jan@home.nl;0612345839;aaaa
+Korteweg;8;;Assen;9405BF;2;jan@home.nl;0612345840;aaaa
+Sint Andreusweg;1;;Assen;9405BG;2;jan@home.nl;0612345841;aaaa
+Touwslagerweg;15;;Assen;9405BH;2;jan@home.nl;0612345842;aaaa
+Stoeldraaierweg;99;;Assen;9405BI;2;jan@home.nl;0612345843;aaaa
+Houthakkerweg;79;;Assen;9405BJ;5;jan@home.nl;0612345844;aaaa
+van Lennepweg;9;;Assen;9405BK;5;jan@home.nl;0612345845;aaaa
+van Damweg;8;;Assen;9405BL;3;jan@home.nl;0612345846;aaaa
+De Wittweg;6;;Assen;9405BM;5;jan@home.nl;0612345847;aaaa
+Dieverweg;5;;Assen;9405BN;2;jan@home.nl;0612345848;aaaa
+Tilburgseweg;43;;Heerenveen;8441AA;4;jan@home.nl;0612345849;aaaa
+Amsterdamseweg;2;;Heerenveen;8441AB;3;jan@home.nl;0612345850;aaaa
+Rotterdamseweg;2;;Heerenveen;8441AC;2;jan@home.nl;0612345851;aaaa
+Drentseweg;3;;Heerenveen;8441AD;1;jan@home.nl;0612345852;aaaa
+Frieseweg;6;;Heerenveen;8441AE;1;jan@home.nl;0612345853;aaaa
+Twentseweg;7;;Heerenveen;8441AF;3;jan@home.nl;0612345854;aaaa
+Haagseweg;8;a;Heerenveen;8441AG;5;jan@home.nl;0612345855;aaaa
+Haarlemmerweg;9;;Heerenveen;8441AH;7;jan@home.nl;0612345856;aaaa
+Haarlemseweg;9;;Heerenveen;8441AI;8;jan@home.nl;0612345857;aaaa
+Zandvoortseweg;6;;Heerenveen;8441AJ;9;jan@home.nl;0612345858;aaaa
+Protonweg;6;;Heerenveen;8441AK;5;jan@home.nl;0612345859;aaaa
+Elektronweg;43;;Heerenveen;8441AL;3;jan@home.nl;0612345860;aaaa
+Mikronweg;5;;Heerenveen;8441AM;2;jan@home.nl;0612345861;aaaa
+Uraniumweg;4;;Heerenveen;8441AN;12;jan@home.nl;0612345862;aaaa
+Plutoniumweg;6;;Heerenveen;8441AO;4;jan@home.nl;0612345863;aaaa
+Germaniumweg;42;;Heerenveen;8441AP;5;jan@home.nl;0612345864;aaaa
+Siliciumweg;4;;Heerenveen;8441AQ;5;jan@home.nl;0612345865;aaaa
+Galliumweg;2;;Heerenveen;8441AR;3;jan@home.nl;0612345866;aaaa
+Boriumweg;47;;Heerenveen;8441AS;2;jan@home.nl;0612345867;aaaa
+Platinaweg;67;;Heerenveen;8441AT;2;jan@home.nl;0612345868;aaaa
+Goudweg;99;;Heerenveen;8441AV;3;jan@home.nl;0612345869;aaaa
+Zilverweg;8;;Heerenveen;8441AU;4;jan@home.nl;0612345870;aaaa
+Diamantweg;9;;Heerenveen;8441AW;5;jan@home.nl;0612345871;aaaa
+Robijnweg;63;;Heerenveen;8441AX;6;jan@home.nl;0612345872;aaaa
+Travetijnweg;5;;Heerenveen;8441AY;7;jan@home.nl;0612345873;aaaa
+Emeraldweg;5;;Heerenveen;8441AZ;5;jan@home.nl;0612345874;aaaa
+Admiraalweg;5;;Heerenveen;8441BA;4;jan@home.nl;0612345875;aaaa
+Generaalweg;77;;Heerenveen;8441BB;3;jan@home.nl;0612345876;aaaa
+Keizerweg;3;;Heerenveen;8441BC;4;jan@home.nl;0612345877;aaaa
+Kalverlaan;3;;Heerenveen;8441BD;5;jan@home.nl;0612345878;aaaa
+Hoofdlaan;6;;Pingjum;8749AA;6;jan@home.nl;0612345879;aaaa
+Eerstelaan;7;;Pingjum;8749AB;2;jan@home.nl;0612345880;aaaa
+Tweedelaan;7;;Pingjum;8749AC;2;jan@home.nl;0612345881;aaaa
+Derdelaan;123;;Pingjum;8749AD;4;jan@home.nl;0612345882;aaaa
+Vierdelaan;6;;Pingjum;8749AE;5;jan@home.nl;0612345883;aaaa
+Vijfdelaan;6;;Pingjum;8749AF;6;jan@home.nl;0612345884;aaaa
+Zesdelaan;3;;Pingjum;8749AG;7;jan@home.nl;0612345885;aaaa
+Nieuwelaan;58;;Pingjum;8749AH;4;jan@home.nl;0612345886;aaaa
+Oudelaan;67;;Pingjum;8749AI;3;jan@home.nl;0612345887;aaaa
+Driehoeklaan;45;;Pingjum;8749AJ;2;jan@home.nl;0612345888;aaaa
+van Nassaulaan;47;;Pingjum;8749AK;3;jan@home.nl;0612345889;aaaa
+van Damlaan;6;;Pingjum;8749AL;5;jan@home.nl;0612345890;aaaa
+Eringalaan;7;;Pingjum;8749AM;6;jan@home.nl;0612345891;aaaa
+Kloosterlaan;4;;Pingjum;8749AN;6;jan@home.nl;0612345892;aaaa
+Moeskerlaan;3;;Pingjum;8749AO;6;jan@home.nl;0612345893;aaaa
+Hooghoudtlaan;58;;Pingjum;8749AP;3;jan@home.nl;0612345894;aaaa
+Jakobslaan;5;;Pingjum;8749AQ;3;jan@home.nl;0612345895;aaaa
+Willemslaan;3;a;Pingjum;8749AR;1;jan@home.nl;0612345896;aaaa
+Beatrixlaan;53;;Birdaard;9112AS;2;jan@home.nl;0612345897;aaaa
+Julianalaan;42;;Birdaard;9112AT;3;jan@home.nl;0612345898;aaaa
+Wilhelminalaan;42;;Birdaard;9112AV;4;jan@home.nl;0612345899;aaaa
+Amalialaan;4;;Birdaard;9112AU;5;jan@home.nl;0612345900;aaaa
+Rozenlaan;2;;Birdaard;9112AW;5;jan@home.nl;0612345901;aaaa
+Dennenlaan;42;;Birdaard;9112AX;5;jan@home.nl;0612345902;aaaa
+Bloemenlaan;4;;Birdaard;9112AY;5;jan@home.nl;0612345903;aaaa
+Dahlialaan;24;;Birdaard;9112AZ;5;jan@home.nl;0612345904;aaaa
+Begonialaan;4;;Birdaard;9112BA;4;jan@home.nl;0612345905;aaaa
+Akeleilaan;6;;Birdaard;9112BB;4;jan@home.nl;0612345906;aaaa
+Kierlaan;86;;Birdaard;9112BC;4;jan@home.nl;0612345907;aaaa
+Kijkduinlaan;3;;Birdaard;9112BD;1;jan@home.nl;0612345908;aaaa
+Beukenlaan;3;;Birdaard;9112BE;1;jan@home.nl;0612345909;aaaa
+Eikenlaan;5;;Birdaard;9112BF;1;jan@home.nl;0612345910;aaaa
+Rododendronlaan;2;;Winsum;9951AA;1;jan@home.nl;0612345911;aaaa
+Fiekuslaan;2;;Winsum;9951AB;1;jan@home.nl;0612345912;aaaa
+Houtzagerlaan;3;;Winsum;9951AC;1;jan@home.nl;0612345913;aaaa
+Steenbakkerlaan;3;b;Winsum;9951AD;2;jan@home.nl;0612345914;aaaa
+Wolkammerlaan;45;;Winsum;9951AE;2;jan@home.nl;0612345915;aaaa
+Frisolaan;2;;Winsum;9951AF;2;jan@home.nl;0612345916;aaaa
+Alexanderlaan;3;;Winsum;9951AG;2;jan@home.nl;0612345917;aaaa
+Constantijnlaan;4;;Winsum;9951AH;3;jan@home.nl;0612345918;aaaa
+Tussenlaan;5;;Winsum;9951AI;3;jan@home.nl;0612345919;aaaa
+Achterlaan;9;;Winsum;9951AJ;4;jan@home.nl;0612345920;aaaa
+Voorlaan;77;;Winsum;9951AK;5;jan@home.nl;0612345921;aaaa
+Kanaallaan;6;;Winsum;9951AL;5;jan@home.nl;0612345922;aaaa
+Rivierlaan;145;;Winsum;9951AM;5;jan@home.nl;0612345923;aaaa
+Meerlaan;4;;Winsum;9951AN;5;jan@home.nl;0612345924;aaaa
+Zeelaan;4;;Winsum;9951AO;5;jan@home.nl;0612345925;aaaa
+Asserlaan;3;;Winsum;9951AP;4;jan@home.nl;0612345926;aaaa
+Groningerlaan;4;;Winsum;9951AQ;4;jan@home.nl;0612345927;aaaa
+Drachtselaan;2;;Winsum;9951AR;4;jan@home.nl;0612345928;aaaa
+Heidelaan;2;;Winsum;9951AS;4;jan@home.nl;0612345929;aaaa
+Kerklaan;2;;Winsum;9951AT;4;jan@home.nl;0612345930;aaaa
+Baronlaan;1;;Winsum;9951AV;4;jan@home.nl;0612345931;aaaa
+Gravinlaan;1;;Winsum;9951AU;4;jan@home.nl;0612345932;aaaa
+Koninglaan;1;;Winsum;9951AW;4;jan@home.nl;0612345933;aaaa
+Koninginlaan;1;;Winsum;9951AX;6;jan@home.nl;0612345934;aaaa
+Sint janlaan;8;;Delfzijl;9934AA;6;jan@home.nl;0612345935;aaaa
+Sint Nicolaaslaan;1;;Delfzijl;9934AB;6;jan@home.nl;0612345936;aaaa
+Sint Antoniuslaan;15;;Delfzijl;9934AC;6;jan@home.nl;0612345937;aaaa
+Van Deijnelaan;99;b;Delfzijl;9934AD;6;jan@home.nl;0612345938;aaaa
+Langelaan;79;b;Delfzijl;9934AE;6;jan@home.nl;0612345939;aaaa
+Kortelaan;9;;Delfzijl;9934AF;6;jan@home.nl;0612345940;aaaa
+Sint Andreuslaan;8;;Delfzijl;9934AG;4;jan@home.nl;0612345941;aaaa
+Touwslagerlaan;6;;Delfzijl;9934AH;4;jan@home.nl;0612345942;aaaa
+Stoeldraaierlaan;5;;Delfzijl;9934AI;4;jan@home.nl;0612345943;aaaa
+Houthakkerlaan;43;;Delfzijl;9934AJ;4;jan@home.nl;0612345944;aaaa
+van Lenneplaan;2;;Delfzijl;9934AK;4;jan@home.nl;0612345945;aaaa
+van Damlaan;2;;Delfzijl;9934AL;4;jan@home.nl;0612345946;aaaa
+De Wittlaan;3;;Delfzijl;9934AM;4;jan@home.nl;0612345947;aaaa
+Dieverlaan;6;;Delfzijl;9934AN;4;jan@home.nl;0612345948;aaaa
+Tilburgselaan;7;;Delfzijl;9934AO;4;jan@home.nl;0612345949;aaaa
+Amsterdamselaan;8;;Delfzijl;9934AP;4;jan@home.nl;0612345950;aaaa
+Rotterdamselaan;9;;Delfzijl;9934AQ;4;jan@home.nl;0612345951;aaaa
+Drentselaan;9;;Delfzijl;9934AR;4;jan@home.nl;0612345952;aaaa
+Frieselaan;6;;Delfzijl;9934AS;3;jan@home.nl;0612345953;aaaa
+Twentselaan;6;;Delfzijl;9934AT;3;jan@home.nl;0612345954;aaaa
+Haagselaan;43;;Delfzijl;9934AV;3;jan@home.nl;0612345955;aaaa
+Haarlemmerlaan;5;;Delfzijl;9934AU;3;jan@home.nl;0612345956;aaaa
+Haarlemselaan;4;;Delfzijl;9934AW;3;jan@home.nl;0612345957;aaaa
+Zandvoortselaan;6;;Delfzijl;9934AX;3;jan@home.nl;0612345958;aaaa
+Protonlaan;42;;Delfzijl;9934AY;3;jan@home.nl;0612345959;aaaa
+Elektronlaan;4;;Delfzijl;9934AZ;2;jan@home.nl;0612345960;aaaa
+Mikronlaan;2;;Delfzijl;9934BA;2;jan@home.nl;0612345961;aaaa
+Uraniumlaan;47;;Delfzijl;9934BB;2;jan@home.nl;0612345962;aaaa
+Plutoniumlaan;67;a;Veendam;9646AA;2;jan@home.nl;0612345963;aaaa
+Germaniumlaan;99;;Veendam;9646AB;23;jan@home.nl;0612345964;aaaa
+Siliciumlaan;8;a;Veendam;9646AC;3;jan@home.nl;0612345965;aaaa
+Galliumlaan;9;b;Veendam;9646AD;3;jan@home.nl;0612345966;aaaa
+Boriumlaan;63;;Veendam;9646AE;3;jan@home.nl;0612345967;aaaa
+Platinalaan;5;;Veendam;9646AF;3;jan@home.nl;0612345968;aaaa
+Goudlaan;5;;Veendam;9646AG;6;jan@home.nl;0612345969;aaaa
+Zilverlaan;5;;Veendam;9646AH;6;jan@home.nl;0612345970;aaaa
+Diamantlaan;77;;Veendam;9646AI;6;jan@home.nl;0612345971;aaaa
+Robijnlaan;3;;Veendam;9646AJ;6;jan@home.nl;0612345972;aaaa
+Travetijnlaan;3;;Veendam;9646AK;7;jan@home.nl;0612345973;aaaa
+Emeraldlaan;6;;Veendam;9646AL;8;jan@home.nl;0612345974;aaaa
+Admiraallaan;7;;Veendam;9646AM;8;jan@home.nl;0612345975;aaaa
+Generaallaan;7;;Veendam;9646AN;7;jan@home.nl;0612345976;aaaa
+Keizerlaan;123;;Veendam;9646AO;8;jan@home.nl;0612345977;aaaa
+Kalverdrift;6;;Veendam;9646AP;7;jan@home.nl;0612345978;aaaa
+Hoofddrift;3;;Veendam;9646AQ;8;jan@home.nl;0612345979;aaaa
+Eerstedrift;58;;Veendam;9646AR;3;jan@home.nl;0612345980;aaaa
+Tweededrift;5;;Veendam;9646AS;3;jan@home.nl;0612345981;aaaa
+Derdedrift;3;;Veendam;9646AT;3;jan@home.nl;0612345982;aaaa
+Vierdedrift;53;;Veendam;9646AV;4;jan@home.nl;0612345983;aaaa
+Vijfdedrift;42;;Veendam;9646AU;5;jan@home.nl;0612345984;aaaa
+Zesdedrift;42;;Veendam;9646AW;6;jan@home.nl;0612345985;aaaa
+Nieuwedrift;4;;Veendam;9646AX;6;jan@home.nl;0612345986;aaaa
+Oudedrift;2;;Veendam;9646AY;6;jan@home.nl;0612345987;aaaa
+Driehoekdrift;42;;Veendam;9646AZ;6;jan@home.nl;0612345988;aaaa
+van Nassaudrift;4;;Veendam;9646BA;5;jan@home.nl;0612345989;aaaa
+van Damdrift;24;;Veendam;9646BB;3;jan@home.nl;0612345990;aaaa
+Eringadrift;4;;Veendam;9646BC;2;jan@home.nl;0612345991;aaaa
+Kloosterdrift;6;;Veendam;9646BD;12;jan@home.nl;0612345992;aaaa
+Moeskerdrift;86;;Veendam;9646BE;12;jan@home.nl;0612345993;aaaa
+Hooghoudtdrift;3;;Veendam;9646BF;3;jan@home.nl;0612345994;aaaa
+Jakobsdrift;3;;Veendam;9646BG;4;jan@home.nl;0612345995;aaaa
+Willemsdrift;5;;Veendam;9646BH;5;jan@home.nl;0612345996;aaaa
+Beatrixdrift;2;;Veendam;9646BI;1;jan@home.nl;0612345997;aaaa
+Julianadrift;5;;Veendam;9646BJ;2;jan@home.nl;0612345998;aaaa
+Wilhelminadrift;5;;Veendam;9646BK;2;jan@home.nl;0612345999;aaaa
+Amaliadrift;9;;Veendam;9646BL;2;jan@home.nl;0612346000;aaaa
+Rozendrift;9;;Veendam;9646BM;2;jan@home.nl;0612346001;aaaa
+Dennendrift;7;;Veendam;9646BN;2;jan@home.nl;0612346002;aaaa
+Bloemendrift;5;;Veendam;9646BO;2;jan@home.nl;0612346003;aaaa
+Dahliadrift;4;;Veendam;9646BP;3;jan@home.nl;0612346004;aaaa
+Begoniadrift;6;;Veendam;9646BQ;4;jan@home.nl;0612346005;aaaa
+Akeleidrift;4;;Veendam;9646BR;5;jan@home.nl;0612346006;aaaa
+Kierdrift;6;;Veendam;9646BS;6;jan@home.nl;0612346007;aaaa
+Kijkduindrift;8;;Veendam;9646BT;6;jan@home.nl;0612346008;aaaa
+Beukendrift;22;;Veendam;9646BV;2;jan@home.nl;0612346009;aaaa
+Eikendrift;4;;Veendam;9646BU;2;jan@home.nl;0612346010;aaaa
+Rododendrondrift;4;;Veendam;9646BW;2;jan@home.nl;0612346011;aaaa
+Fiekusdrift;8;;Veendam;9646BX;2;jan@home.nl;0612346012;aaaa
+Houtzagerdrift;3;;Veendam;9646BY;2;jan@home.nl;0612346013;aaaa
+Steenbakkerdrift;5;;Veendam;9646BZ;4;jan@home.nl;0612346014;aaaa
+Wolkammerdrift;6;;Veendam;9646CA;4;jan@home.nl;0612346015;aaaa
+Frisodrift;2;;Veendam;9646CB;5;jan@home.nl;0612346016;aaaa
+Alexanderdrift;4;;Veendam;9646CC;5;jan@home.nl;0612346017;aaaa
+Constantijndrift;4;;Veendam;9646CD;5;jan@home.nl;0612346018;aaaa
+Tussendrift;8;;Veendam;9646CE;5;jan@home.nl;0612346019;aaaa
+Achterdrift;42;;Veendam;9646CF;5;jan@home.nl;0612346020;aaaa
+Voordrift;4;a;Veendam;9646CG;5;jan@home.nl;0612346021;aaaa
+Kanaaldrift;2;;Briltil;9805AA;5;jan@home.nl;0612346022;aaaa
+Rivierdrift;47;;Briltil;9805AB;4;jan@home.nl;0612346023;aaaa
+Meerdrift;67;;Briltil;9805AC;4;jan@home.nl;0612346024;aaaa
+Zeedrift;99;;Briltil;9805AD;4;jan@home.nl;0612346025;aaaa
+Asserdrift;8;;Briltil;9805AE;4;jan@home.nl;0612346026;aaaa
+Groningerdrift;9;;Briltil;9805AF;4;jan@home.nl;0612346027;aaaa
+Drachtsedrift;63;;Briltil;9805AG;4;jan@home.nl;0612346028;aaaa
+Heidedrift;5;;Briltil;9805AH;4;jan@home.nl;0612346029;aaaa
+Kerkdrift;5;;Briltil;9805AI;4;jan@home.nl;0612346030;aaaa
+Barondrift;5;;Briltil;9805AJ;4;jan@home.nl;0612346031;aaaa
+Gravindrift;77;;Briltil;9805AK;4;jan@home.nl;0612346032;aaaa
+Koningdrift;3;;Briltil;9805AL;4;jan@home.nl;0612346033;aaaa
+Koningindrift;3;;Briltil;9805AM;4;jan@home.nl;0612346034;aaaa
+Sint jandrift;6;;Briltil;9805AN;3;jan@home.nl;0612346035;aaaa
+Sint Nicolaasdrift;7;;Briltil;9805AO;3;jan@home.nl;0612346036;aaaa
+Sint Antoniusdrift;7;;Briltil;9805AP;3;jan@home.nl;0612346037;aaaa
+Van Deijnedrift;123;;Briltil;9805AQ;3;jan@home.nl;0612346038;aaaa
+Langedrift;6;;Briltil;9805AR;3;jan@home.nl;0612346039;aaaa
+Kortedrift;6;;Briltil;9805AS;3;jan@home.nl;0612346040;aaaa
+Sint Andreusdrift;3;;Briltil;9805AT;3;jan@home.nl;0612346041;aaaa
+Touwslagerdrift;58;;Briltil;9805AV;3;jan@home.nl;0612346042;aaaa
+Stoeldraaierdrift;67;;Briltil;9805AU;3;jan@home.nl;0612346043;aaaa
+Houthakkerdrift;45;;Briltil;9805AW;3;jan@home.nl;0612346044;aaaa
+van Lennepdrift;45;;Briltil;9805AX;3;jan@home.nl;0612346045;aaaa
+van Damdrift;2;;Briltil;9805AY;2;jan@home.nl;0612346046;aaaa
+De Wittdrift;3;;Briltil;9805AZ;2;jan@home.nl;0612346047;aaaa
+Dieverdrift;4;;Briltil;9805BA;2;jan@home.nl;0612346048;aaaa
+Tilburgsedrift;5;;Briltil;9805BB;2;jan@home.nl;0612346049;aaaa
+Amsterdamsedrift;9;;Briltil;9805BC;2;jan@home.nl;0612346050;aaaa
+Rotterdamsedrift;77;;Briltil;9805BD;4;jan@home.nl;0612346051;aaaa
+Drentsedrift;6;;Briltil;9805BE;3;jan@home.nl;0612346052;aaaa
+Friesedrift;145;;Briltil;9805BF;5;jan@home.nl;0612346053;aaaa
+Twentsedrift;4;;Briltil;9805BG;5;jan@home.nl;0612346054;aaaa
+Haagsedrift;4;;Briltil;9805BH;3;jan@home.nl;0612346055;aaaa
+Haarlemmerdrift;3;;Briltil;9805BI;3;jan@home.nl;0612346056;aaaa
+Haarlemsedrift;4;;Briltil;9805BJ;3;jan@home.nl;0612346057;aaaa
+Zandvoortsedrift;2;;Briltil;9805BK;3;jan@home.nl;0612346058;aaaa
+Protondrift;2;;Briltil;9805BL;;jan@home.nl;0612346059;aaaa
+Elektrondrift;2;;Briltil;9805BM;5;jan@home.nl;0612346060;aaaa
+Mikrondrift;1;;Briltil;9805BN;5;jan@home.nl;0612346061;aaaa
+Uraniumdrift;1;;Briltil;9805BO;5;jan@home.nl;0612346062;aaaa
+Plutoniumdrift;1;;Briltil;9805BP;5;jan@home.nl;0612346063;aaaa
+Germaniumdrift;1;;Briltil;9805BQ;5;jan@home.nl;0612346064;aaaa
+Siliciumdrift;8;;Briltil;9805BR;5;jan@home.nl;0612346065;aaaa
+Galliumdrift;1;;Briltil;9805BS;5;jan@home.nl;0612346066;aaaa
+Boriumdrift;15;;Briltil;9805BT;5;jan@home.nl;0612346067;aaaa
+Platinadrift;99;;Briltil;9805BV;4;jan@home.nl;0612346068;aaaa
+Gouddrift;79;;Lemmer;8531AA;2;jan@home.nl;0612346069;aaaa
+Zilverdrift;9;;Lemmer;8531AB;2;jan@home.nl;0612346070;aaaa
+Diamantdrift;8;;Lemmer;8531AC;2;jan@home.nl;0612346071;aaaa
+Robijndrift;6;;Lemmer;8531AD;2;jan@home.nl;0612346072;aaaa
+Travetijndrift;5;;Lemmer;8531AE;2;jan@home.nl;0612346073;aaaa
+Emeralddrift;43;;Lemmer;8531AF;5;jan@home.nl;0612346074;aaaa
+Admiraaldrift;2;;Lemmer;8531AG;5;jan@home.nl;0612346075;aaaa
+Generaaldrift;2;;Lemmer;8531AH;3;jan@home.nl;0612346076;aaaa
+Keizerdrift;3;a;Lemmer;8531AI;5;jan@home.nl;0612346077;aaaa
+Kalverbaan;6;;Lemmer;8531AJ;2;jan@home.nl;0612346078;aaaa
+Hoofdbaan;7;;Lemmer;8531AK;4;jan@home.nl;0612346079;aaaa
+Eerstebaan;8;;Lemmer;8531AL;3;jan@home.nl;0612346080;aaaa
+Tweedebaan;9;;Lemmer;8531AM;2;jan@home.nl;0612346081;aaaa
+Derdebaan;9;;Lemmer;8531AN;1;jan@home.nl;0612346082;aaaa
+Vierdebaan;6;;Lemmer;8531AO;1;jan@home.nl;0612346083;aaaa
+Vijfdebaan;6;;Lemmer;8531AP;3;jan@home.nl;0612346084;aaaa
+Zesdebaan;43;;Lemmer;8531AQ;5;jan@home.nl;0612346085;aaaa
+Nieuwebaan;5;;Lemmer;8531AR;7;jan@home.nl;0612346086;aaaa
+Oudebaan;4;;Lemmer;8531AS;8;jan@home.nl;0612346087;aaaa
+Driehoekbaan;6;;Lemmer;8531AT;9;jan@home.nl;0612346088;aaaa
+van Nassaubaan;42;;Lemmer;8531AV;5;jan@home.nl;0612346089;aaaa
+van Dambaan;4;;Lemmer;8531AU;3;jan@home.nl;0612346090;aaaa
+Eringabaan;2;;Lemmer;8531AW;2;jan@home.nl;0612346091;aaaa
+Kloosterbaan;47;;Lemmer;8531AX;12;jan@home.nl;0612346092;aaaa
+Moeskerbaan;67;;Lemmer;8531AY;4;jan@home.nl;0612346093;aaaa
+Hooghoudtbaan;99;;Lemmer;8531AZ;5;jan@home.nl;0612346094;aaaa
+Jakobsbaan;8;;Lemmer;8531BA;5;jan@home.nl;0612346095;aaaa
+Willemsbaan;9;;Lemmer;8531BB;3;jan@home.nl;0612346096;aaaa
+Beatrixbaan;63;;Lemmer;8531BC;2;jan@home.nl;0612346097;aaaa
+Julianabaan;5;;Lemmer;8531BD;2;jan@home.nl;0612346098;aaaa
+Wilhelminabaan;5;;Lemmer;8531BE;3;jan@home.nl;0612346099;aaaa
+Amaliabaan;5;;Lemmer;8531BF;4;jan@home.nl;0612346100;aaaa
+Rozenbaan;77;;Lemmer;8531BG;5;jan@home.nl;0612346101;aaaa
+Dennenbaan;3;;Lemmer;8531BH;6;jan@home.nl;0612346102;aaaa
+Bloemenbaan;3;;Lemmer;8531BI;7;jan@home.nl;0612346103;aaaa
+Dahliabaan;6;;Emmeloord;8303AA;5;jan@home.nl;0612346104;aaaa
+Begoniabaan;7;;Emmeloord;8303AB;4;jan@home.nl;0612346105;aaaa
+Akeleibaan;7;;Emmeloord;8303AC;3;jan@home.nl;0612346106;aaaa
+Kierbaan;123;;Emmeloord;8303AD;4;jan@home.nl;0612346107;aaaa
+Kijkduinbaan;6;;Emmeloord;8303AE;5;jan@home.nl;0612346108;aaaa
+Beukenbaan;6;;Emmeloord;8303AF;6;jan@home.nl;0612346109;aaaa
+Eikenbaan;3;;Emmeloord;8303AG;2;jan@home.nl;0612346110;aaaa
+Rododendronbaan;58;;Emmeloord;8303AH;2;jan@home.nl;0612346111;aaaa
+Fiekusbaan;67;;Emmeloord;8303AI;4;jan@home.nl;0612346112;aaaa
+Houtzagerbaan;45;;Emmeloord;8303AJ;5;jan@home.nl;0612346113;aaaa
+Steenbakkerbaan;47;;Emmeloord;8303AK;6;jan@home.nl;0612346114;aaaa
+Wolkammerbaan;6;;Emmeloord;8303AL;7;jan@home.nl;0612346115;aaaa
+Frisobaan;7;;Emmeloord;8303AM;4;jan@home.nl;0612346116;aaaa
+Alexanderbaan;4;;Emmeloord;8303AN;3;jan@home.nl;0612346117;aaaa
+Constantijnbaan;3;;Emmeloord;8303AO;2;jan@home.nl;0612346118;aaaa
+Tussenbaan;58;;Emmeloord;8303AP;3;jan@home.nl;0612346119;aaaa
+Achterbaan;5;;Emmeloord;8303AQ;5;jan@home.nl;0612346120;aaaa
+Voorbaan;3;;Emmeloord;8303AR;6;jan@home.nl;0612346121;aaaa
+Kanaalbaan;53;;Emmeloord;8303AS;6;jan@home.nl;0612346122;aaaa
+Rivierbaan;42;;Beilen;9411AA;6;jan@home.nl;0612346123;aaaa
+Meerbaan;42;;Beilen;9411AB;3;jan@home.nl;0612346124;aaaa
+Zeebaan;4;a;Beilen;9411AC;3;jan@home.nl;0612346125;aaaa
+Asserbaan;2;;Beilen;9411AD;1;jan@home.nl;0612346126;aaaa
+Groningerbaan;42;;Beilen;9411AE;2;jan@home.nl;0612346127;aaaa
+Drachtsebaan;4;;Beilen;9411AF;3;jan@home.nl;0612346128;aaaa
+Heidebaan;24;;Beilen;9411AG;4;jan@home.nl;0612346129;aaaa
+Kerkbaan;4;;Beilen;9411AH;5;jan@home.nl;0612346130;aaaa
+Baronbaan;6;;Beilen;9411AI;5;jan@home.nl;0612346131;aaaa
+Gravinbaan;86;;Beilen;9411AJ;5;jan@home.nl;0612346132;aaaa
+Koningbaan;3;;Beilen;9411AK;5;jan@home.nl;0612346133;aaaa
+Koninginbaan;3;;Beilen;9411AL;5;jan@home.nl;0612346134;aaaa
+Sint janbaan;5;;Beilen;9411AM;4;jan@home.nl;0612346135;aaaa
+Sint Nicolaasbaan;2;;Beilen;9411AN;4;jan@home.nl;0612346136;aaaa
+Sint Antoniusbaan;2;;Beilen;9411AO;4;jan@home.nl;0612346137;aaaa
+Van Deijnebaan;3;;Beilen;9411AP;2;jan@home.nl;0612346138;aaaa
+Langebaan;3;;Beilen;9411AQ;3;jan@home.nl;0612346139;aaaa
+Kortebaan;45;;Beilen;9411AR;4;jan@home.nl;0612346140;aaaa
+Sint Andreusbaan;2;;Beilen;9411AS;5;jan@home.nl;0612346141;aaaa
+Touwslagerbaan;3;;Beilen;9411AT;6;jan@home.nl;0612346142;aaaa
+Stoeldraaierbaan;4;;Beilen;9411AV;7;jan@home.nl;0612346143;aaaa
+Houthakkerbaan;5;;Beilen;9411AU;5;jan@home.nl;0612346144;aaaa
+van Lennepbaan;9;;Beilen;9411AW;4;jan@home.nl;0612346145;aaaa
+van Dambaan;77;;Beilen;9411AX;3;jan@home.nl;0612346146;aaaa
+De Wittbaan;6;;Beilen;9411AY;4;jan@home.nl;0612346147;aaaa
+Dieverbaan;145;;Beilen;9411AZ;5;jan@home.nl;0612346148;aaaa
+Tilburgsebaan;4;;Gieten;9461AA;6;jan@home.nl;0612346149;aaaa
+Amsterdamsebaan;4;;Gieten;9461AB;2;jan@home.nl;0612346150;aaaa
+Rotterdamsebaan;3;;Gieten;9461AC;2;jan@home.nl;0612346151;aaaa
+Drentsebaan;4;;Gieten;9461AD;4;jan@home.nl;0612346152;aaaa
+Friesebaan;2;;Gieten;9461AE;5;jan@home.nl;0612346153;aaaa
+Twentsebaan;2;;Gieten;9461AF;6;jan@home.nl;0612346154;aaaa
+Haagsebaan;2;;Gieten;9461AG;7;jan@home.nl;0612346155;aaaa
+Haarlemmerbaan;6;;Gieten;9461AH;4;jan@home.nl;0612346156;aaaa
+Haarlemsebaan;5;;Gieten;9461AI;3;jan@home.nl;0612346157;aaaa
+Zandvoortsebaan;34;;Gieten;9461AJ;2;jan@home.nl;0612346158;aaaa
+Protonbaan;2;;Gieten;9461AK;3;jan@home.nl;0612346159;aaaa
+Elektronbaan;5;;Gieten;9461AL;5;jan@home.nl;0612346160;aaaa
+Mikronbaan;6;;Gieten;9461AM;6;jan@home.nl;0612346161;aaaa
+Uraniumbaan;8;;Gieten;9461AN;6;jan@home.nl;0612346162;aaaa
+Plutoniumbaan;99;;Gieten;9461AO;6;jan@home.nl;0612346163;aaaa
+Germaniumbaan;23;;Gieten;9461AP;3;jan@home.nl;0612346164;aaaa
+Siliciumbaan;8;;Gieten;9461AQ;3;jan@home.nl;0612346165;aaaa
+Galliumbaan;5;;Borger;9531AA;1;jan@home.nl;0612346166;aaaa
+Boriumbaan;4;;Borger;9531AB;2;jan@home.nl;0612346167;aaaa
+Platinabaan;32;;Borger;9531AC;3;jan@home.nl;0612346168;aaaa
+Goudbaan;1;;Borger;9531AD;4;jan@home.nl;0612346169;aaaa
+Zilverbaan;1;;Borger;9531AE;5;jan@home.nl;0612346170;aaaa
+Diamantbaan;4;;Borger;9531AF;5;jan@home.nl;0612346171;aaaa
+Robijnbaan;6;;Borger;9531AG;5;jan@home.nl;0612346172;aaaa
+Travetijnbaan;8;;Borger;9531AH;5;jan@home.nl;0612346173;aaaa
+Emeraldbaan;4;;Borger;9531AI;5;jan@home.nl;0612346174;aaaa
+Admiraalbaan;4;;Borger;9531AJ;4;jan@home.nl;0612346175;aaaa
+Generaalbaan;2;;Borger;9531AK;4;jan@home.nl;0612346176;aaaa
+Keizerbaan;2;a;Borger;9531AL;4;jan@home.nl;0612346177;aaaa
