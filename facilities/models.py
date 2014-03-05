@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Facilities(models.Model):
+class Facility(models.Model):
     street = models.CharField(max_length=80)
     street2 = models.CharField(max_length=80)
     city = models.CharField(max_length=80)
