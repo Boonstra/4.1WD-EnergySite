@@ -4,10 +4,25 @@
 <body>
 <ul>
     <li><a href="{{ '/' }}"><b>Home</b></a></li>
+    {% if not user.is_logged_in %}
+        <li><a href="{% url 'facilities.views.login' %}"><b>Login</b></a></li>
+    {% endif %}
     <li><a href="{% url 'facilities.views.index' %}"><b>Facilities</b></a></li>
     <li><a href="{% url 'facilities.views.add' %}">Add facility</a></li>
     <li><a href="{% url 'measurements.views.index' %}"><b>Measurements</b></a></li>
+    <li><a href="{% url 'devices.views.index' %}"><b>Devices</b></a></li>
+    <li><a href="{% url 'devices.views.add' %}"><b>Add devices</b></a></li>
+    {% if user.is_logged_in %}
+        <li><a href="{% url 'facilities.views.logout' %}"><b>Logout</b></a></li>
+    {% endif %}
 </ul>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
 {% block content %}
 {% endblock %}
 </body>
