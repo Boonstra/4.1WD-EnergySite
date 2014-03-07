@@ -2,6 +2,8 @@ from django.conf.urls import patterns, include, url
 from django.views.generic import TemplateView
 
 from django.contrib import admin
+import measurements
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -11,4 +13,9 @@ urlpatterns = patterns('',
     url(r'^facilities/', include('facilities.urls')),
     url(r'^$', TemplateView.as_view(template_name="index.html")),
     url(r'^admin/', include(admin.site.urls)),
+<<<<<<< HEAD
 )
+=======
+    url(r'^measurements/', include('measurements.urls')),
+)
+>>>>>>> 06ae7af4457a8198e220ad420c689d81c3fbb5ba
