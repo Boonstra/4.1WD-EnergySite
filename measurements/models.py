@@ -10,5 +10,6 @@ class Time(models.Model):
 class Measurement(models.Model):
     facility = models.ForeignKey(Facility)
     device = models.ForeignKey(Device)
+    date = models.DateField()
     time = models.ForeignKey(Time)
     value = models.FloatField()
