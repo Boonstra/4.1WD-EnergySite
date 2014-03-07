@@ -19,8 +19,6 @@ def add(request):
         if form.is_valid():
             form.save()
 
-
-
     form = AddFacilityForm()
     context = {
         'form': form
