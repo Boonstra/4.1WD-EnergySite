@@ -2,6 +2,12 @@
 <html>
 <head><title>Energy</title></head>
 <body>
+<ul>
+    <li><a href="{{ '/' }}"><b>Home</b></a></li>
+    <li><a href="{% url 'facilities.views.index' %}"><b>Facilities</b></a></li>
+    <li><a href="{% url 'facilities.views.add' %}">Add facility</a></li>
+    <li><a href="{% url 'measurements.views.index' %}"><b>Measurements</b></a></li>
+</ul>
 {% block content %}
 {% endblock %}
 </body>
