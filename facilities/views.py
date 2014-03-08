@@ -55,6 +55,10 @@ def add(request):
     }
     return render(request, 'facilities/add.html', context)
 
+def view(request):
+    user_facilities = request.user.facilities.all()
+    return render(request, 'facilities/view.html', {'facilities': user_facilities})
+
 def login(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)

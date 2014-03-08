@@ -11,3 +11,6 @@ class Device(models.Model):
     category = models.ForeignKey(Category)
     brand = models.CharField(max_length=80)
     model = models.CharField(max_length=80)
+
+    def __unicode__(self):
+        return u'{0}'.format(self.model)

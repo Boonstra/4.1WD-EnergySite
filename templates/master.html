@@ -11,9 +11,11 @@
     {% if user.is_authenticated %}
     <li><a href="{% url 'facilities.views.index' %}"><b>Facilities</b></a></li>
     <li><a href="{% url 'facilities.views.add' %}">Add facility</a></li>
+    <li><a href="{% url 'facilities.views.view' %}">View your facilities</a></li>
     <li><a href="{% url 'measurements.views.index' %}"><b>Measurements</b></a></li>
     <li><a href="{% url 'devices.views.index' %}"><b>Devices</b></a></li>
-    <li><a href="{% url 'devices.views.add' %}"><b>Add devices</b></a></li>
+    <li><a href="{% url 'devices.views.add' %}">Add devices</a></li>
+    <li><a href="{% url 'devices.views.view' %}">View devices</a></li>
     <li><a href="{% url 'facilities.views.logout' %}"><b>Logout</b></a></li>
     {% endif %}
 </ul>
