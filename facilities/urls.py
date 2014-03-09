@@ -7,6 +7,8 @@ urlpatterns = patterns('',
 
     url(r'^$', 'facilities.views.index', name='index'),
     url(r'^add/', 'facilities.views.add', name='add'),
+    url(r'^view/', 'facilities.views.view', name='view'),
+    url(r'^register/', 'facilities.views.register', name='register'),
     url(r'^login/', 'facilities.views.login', name='login'),
     url(r'^logout/', 'facilities.views.logout', name='logout'),
 )

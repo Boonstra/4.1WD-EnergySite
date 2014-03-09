@@ -1,0 +1,24 @@
+{% extends 'master.html' %}
+
+{% block content %}
+    {% for facility in facilities %}
+        <table>
+            <tr><th>street</th>
+            <th>street2</th>
+            <th>city</th>
+            <th>zipcode</th>
+            <th>inhabitants</th>
+            <th>email</th>
+            <th>phonenumber</th>
+            <th>password</th></tr>
+            <tr><td>{{ facility.street }}</td>
+            <td>{{ facility.street2 }}</td>
+            <td>{{ facility.city }}</td>
+            <td>{{ facility.zipcode }}</td>
+            <td>{{ facility.inhabitants }}</td>
+            <td>{{ facility.email }}</td>
+            <td>{{ facility.phone_number }}</td>
+            <td>{{ facility.password }}</td></tr>
+        </table>
+    {% endfor %}
+{% endblock %}
