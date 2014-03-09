@@ -19,11 +19,9 @@ def add(request):
     if request.method == 'POST':
         form = AddDeviceToFacilityForm(request.POST)
         if form.is_valid():
-            device = form.cleaned_data['devices']
-            facility = Facility(id=request.user.facilities.all()[:1].get())
-            device = Device(id=device.id)
-            print(device.id)
-            device.facilities.add(facility)
+            devices = form.cleaned_data['devices']
+            facility = Facility.objects.get(pk=request.user.facilities.all()[:1].get().id)
+            facility.device_set.add(devices)
 
     all_devices = Device.objects.all()
     user_devices = request.user.facilities.all()
