@@ -1,10 +1,10 @@
+import datetime
 from django import forms
+from django.http import Http404
 from django.shortcuts import render
 from rest_framework import viewsets
-from devices.models import Device
 from measurements.models import Measurement, Time
 from measurements.serializers import MeasurementSerializer
-from django.contrib.auth.models import User
 
 
 class AddMeasurementToDeviceForm(forms.Form):
@@ -20,9 +20,15 @@ class AddMeasurementToDeviceForm(forms.Form):
 
 
 def index(request):
-    # TODO Get current facility ID
+    try:
+        facility_id = request.user.facilities.all()[0].id
+    except:
+        raise Http404
+
     # Get all measurements
-    measurements = Measurement.objects.filter(facility_id=1).order_by('device__id', 'time__time')
+    measurements = Measurement.objects\
+        .filter(facility_id=facility_id, date__gte=datetime.date.today())\
+        .order_by('device__id', 'time__time')
 
     # Put all measurements in a dictionary ordered by their device
     measurements_by_device = {}
