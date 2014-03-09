@@ -8,7 +8,15 @@ from django.contrib.auth.models import User
 
 
 class AddMeasurementToDeviceForm(forms.Form):
+
     times = forms.ModelChoiceField(queryset=Time.objects.all())
+    user_id = forms.IntegerField()
+
+    def __init__(self, *args, **kwargs):
+        user_id = kwargs.pop('user_id')
+        super(AddMeasurementToDeviceForm, self).__init__(*args, **kwargs)
+        if user_id:
+            self.fields['user_id'].initial = user_id
 
 
 def index(request):
@@ -42,20 +50,10 @@ def index(request):
 
 
 def add(request):
-    form = AddMeasurementToDeviceForm()
+    form = AddMeasurementToDeviceForm(user_id=1)
     return render(request, 'measurements/add.html', {'form': form})
 
 
 class MeasurementViewSet(viewsets.ModelViewSet):
     queryset = Measurement.objects.all()
     serializer_class = MeasurementSerializer
-    # permission_classes = (permissions.IsAuthenticatedOrReadOnly,
-    #                       IsOwnerOrReadOnly,)
-    #
-    # @link(renderer_classes=(renderers.StaticHTMLRenderer,))
-    # def highlight(self, request, *args, **kwargs):
-    #     snippet = self.get_object()
-    #     return Response(snippet.highlighted)
-    #
-    # def pre_save(self, obj):
-    #     obj.owner = self.request.user
