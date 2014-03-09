@@ -1,8 +1,14 @@
+from django import forms
 from django.shortcuts import render
 from rest_framework import viewsets
 from devices.models import Device
 from measurements.models import Measurement, Time
 from measurements.serializers import MeasurementSerializer
+from django.contrib.auth.models import User
+
+
+class AddMeasurementToDeviceForm(forms.Form):
+    times = forms.ModelChoiceField(queryset=Time.objects.all())
 
 
 def index(request):
@@ -33,6 +39,11 @@ def index(request):
     context = {'measurements_by_device': measurements_by_device, 'times': times}
 
     return render(request, 'measurements/index.html', context)
+
+
+def add(request):
+    form = AddMeasurementToDeviceForm()
+    return render(request, 'measurements/add.html', {'form': form})
 
 
 class MeasurementViewSet(viewsets.ModelViewSet):

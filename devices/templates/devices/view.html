@@ -1,8 +1,16 @@
 {% extends 'master.html' %}
 
 {% block content %}
-{% for device in devices %}
-    {{ device.model }}
-    {{ device.brand }}
-{% endfor %}
+    {% for device in devices %}
+        <table>
+            <tr>
+                <th>Device model</th>
+                <th>Device brand</th>
+            </tr>
+            <tr>
+                <td>{{ device.model }}</td>
+                <td>{{ device.brand }}</td>
+            </tr>
+        </table>
+    {% endfor %}
 {% endblock %}

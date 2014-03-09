@@ -5,4 +5,5 @@ from measurements import views
 urlpatterns = patterns('',
     # ex: /polls/
     url(r'^$', views.index, name='index'),
+    url(r'^add/', views.add, name='add'),
 )
