@@ -1,6 +1,8 @@
 from django.shortcuts import render
+from rest_framework import viewsets
 from devices.models import Device
 from measurements.models import Measurement, Time
+from measurements.serializers import MeasurementSerializer
 
 
 def index(request):
@@ -31,3 +33,18 @@ def index(request):
     context = {'measurements_by_device': measurements_by_device, 'times': times}
 
     return render(request, 'measurements/index.html', context)
+
+
+class MeasurementViewSet(viewsets.ModelViewSet):
+    queryset = Measurement.objects.all()
+    serializer_class = MeasurementSerializer
+    # permission_classes = (permissions.IsAuthenticatedOrReadOnly,
+    #                       IsOwnerOrReadOnly,)
+    #
+    # @link(renderer_classes=(renderers.StaticHTMLRenderer,))
+    # def highlight(self, request, *args, **kwargs):
+    #     snippet = self.get_object()
+    #     return Response(snippet.highlighted)
+    #
+    # def pre_save(self, obj):
+    #     obj.owner = self.request.user
