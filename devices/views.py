@@ -33,6 +33,6 @@ def add(request):
 
 
 def view(request):
-    user_facilities = request.user.facilities.all()
-    user_facilities_devices = user_facilities.devices.all()
-    return render(request, 'view.html', {'devices': user_facilities_devices})
+    user_facilities = Facility.objects.get(pk=request.user.facilities.all()[:1].get().id)
+    user_facilities_devices = user_facilities.device_set.all()
+    return render(request, 'devices/view.html', {'devices': user_facilities_devices})
