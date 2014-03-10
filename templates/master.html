@@ -16,7 +16,7 @@
     <ul>
         {% if user.is_authenticated %}
             <li>
-                <a href="{% url 'facilities.views.index' %}"><b>Facilities</b></a>
+                <a href="{% url 'facilities.views.index' %}">Facilities</a>
                 <ul>
                     {% if perms.facilities.add_facility %}
                         <li><a href="{% url 'facilities.views.add' %}">Add facility</a></li>
@@ -30,18 +30,22 @@
             </li>
 
             <li>
-                <a href="{% url 'measurements.views.index' %}"><b>Measurements</b></a>
+                <a href="{% url 'measurements.views.index' %}">Measurements</a>
                 <ul>
                     <li><a href="{% url 'measurements.views.add' %}">Add measurement</a></li>
                 </ul>
             </li>
             {% if perms.devices.add_device %}
-                <li><a href="{% url 'devices.views.index' %}"><b>Devices</b></a></li>
-                <li><a href="{% url 'devices.views.add' %}">Add devices</a></li>
-                <li><a href="{% url 'devices.views.view' %}">View devices</a></li>
-                <li><a href="{% url 'devices.views.remove_device' %}">Remove devices</a></li>
+                <li>
+                    <a href="{% url 'devices.views.index' %}">Devices</a></li>
+                <ul>
+                    <li><a href="{% url 'devices.views.add' %}">Add devices</a></li>
+                    <li><a href="{% url 'devices.views.view' %}">View devices</a></li>
+                    <li><a href="{% url 'devices.views.remove_device' %}">Remove devices</a></li>
+                </ul>
+                </li>
             {% endif %}
-            <li><a href="{% url 'facilities.views.logout' %}"><b>Logout</b></a></li>
+            <li><a href="{% url 'facilities.views.logout' %}">Logout</a></li>
         {% endif %}
         <li><a href="{% url 'measurements.views.view' %}">View measurement averages</a></li>
     </ul>
