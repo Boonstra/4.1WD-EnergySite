@@ -1,50 +1,3 @@
-compare_chart = function()
-{
-    var self = {};
-
-    self.init = function()
-    {
-        self.$compareChart = $$('.content').getElement('.compare-chart')[0];
-
-        self.data = JSON.parse('[{"time": 1, "value": 0.03}, {"time": 2, "value": 0.035}, {"time": 3, "value": 0.045000000000000005}, {"time": 4, "value": 0.065}, {"time": 5, "value": 0.125}, {"time": 6, "value": 0.15000000000000002}, {"time": 7, "value": 0.15000000000000002}, {"time": 8, "value": 0.55}, {"time": 9, "value": 0.45}, {"time": 10, "value": 0.33999999999999997}]');
-
-        for (var measurement in self.data)
-        {
-            if (!self.data.hasOwnProperty(measurement))
-            {
-                continue;
-            }
-
-            console.log(measurement);
-        }
-
-        // Creates canvas 320 × 200 at 10, 50
-        var paper = Raphael(self.$compareChart, 600, 480);
-
-        // Creates circle at x = 50, y = 40, with radius 10
-        var circle = paper.circle(50, 40, 10);
-
-        // Sets the fill attribute of the circle to red (#f00)
-        circle.attr("fill", "#f00");
-
-        // Sets the stroke attribute of the circle to white
-        circle.attr("stroke", "#fff");
-    };
-
-    window.addEvent('domready', function() {
-        self.init();
-    });
-
-    return self;
-}();
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
 Raphael.fn.drawGrid = function (x, y, w, h, wv, hv, color) {
     color = color || "#000";
     var path = ["M", Math.round(x) + .5, Math.round(y) + .5, "L", Math.round(x + w) + .5, Math.round(y) + .5, Math.round(x + w) + .5, Math.round(y + h) + .5, Math.round(x) + .5, Math.round(y + h) + .5, Math.round(x) + .5, Math.round(y) + .5],
@@ -89,14 +42,23 @@ window.onload = function () {
     }
     // Grab the data
     var labels = [],
-        data = [];
-    $("#data tfoot th").each(function () {
-        labels.push($(this).html());
-    });
-    $("#data tbody td").each(function () {
-        data.push($(this).html());
-    });
+        data = [],
+        measurements = JSON.parse('[{"time": 1, "value": 0.03}, {"time": 2, "value": 0.035}, {"time": 3, "value": 0.045000000000000005}, {"time": 4, "value": 0.065}, {"time": 5, "value": 0.125}, {"time": 6, "value": 0.15000000000000002}, {"time": 7, "value": 0.15000000000000002}, {"time": 8, "value": 0.55}, {"time": 9, "value": 0.45}, {"time": 10, "value": 0.33999999999999997}]');
+console.log(measurements);
+    for (var measurementsIndex = 0; measurementsIndex < measurements.length; measurementsIndex++)
+    {
+        data.push(Math.round(measurements[measurementsIndex].value * 100) / 100);
+        labels.push(measurements[measurementsIndex].time);
+    }
 
+
+//    $("#data tfoot th").each(function () {
+//        labels.push($(this).html());
+//    });
+//    $("#data tbody td").each(function () {
+//        data.push($(this).html());
+//    });
+    
     // Draw
     var width = 800,
         height = 250,
