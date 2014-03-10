@@ -7,8 +7,6 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework.renderers import JSONRenderer
 from measurements.models import Measurement, Time
-from devices.models import Device
-from measurements.serializers import MeasurementSerializer
 
 
 class AddMeasurementToDeviceForm(forms.Form):
@@ -71,10 +69,8 @@ def add(request):
     return render(request, 'measurements/add.html', {'form': form})
 
 
-def measurements_list(request):
-    measurements = Measurement.objects.all()
-    serializer = MeasurementSerializer(measurements)
-    return JSONResponse(serializer.data)
+def compare(request):
+    return render(request, 'measurements/compare.html', {})
 
 
 class MeasurementViewSet(viewsets.ViewSet):
@@ -82,16 +78,22 @@ class MeasurementViewSet(viewsets.ViewSet):
 
     def list(self, request):
         comparison_method = request.GET.get('comparison_method')
+        zipcode = request.GET.get('zipcode')
         device_model = request.GET.get('device_model')
         device_category_id = request.GET.get('device_category_id')
 
+        if not zipcode:
+            zipcode = ''
+
         if comparison_method == 'type' and device_model:
-            device_ids = Device.objects.filter(model__contains=device_model).values_list('id', flat=True)
+            # device_ids = Device.objects.filter(model__contains=device_model).values_list('id', flat=True)
+            measurements = Measurement.objects.filter(device__model__contains=device_model,
+                                                      facility__zipcode__contains=zipcode)
         elif comparison_method == 'category' and device_category_id:
-            device_ids = Device.objects.filter(category=device_category_id).values_list('id', flat=True)
+            # device_ids = Device.objects.filter(category=device_category_id).values_list('id', flat=True)
+            measurements = Measurement.objects.filter(device__category=device_category_id,
+                                                      facility__zipcode__contains=zipcode)
         else:
-            return JSONResponse({})
+            return JSONResponse([])
 
-        measurements = Measurement.objects.filter(device__in=device_ids).values('time').annotate(value=Avg('value'))
-
-        return JSONResponse(measurements)
+        return JSONResponse(measurements.values('time').annotate(value=Avg('value')))

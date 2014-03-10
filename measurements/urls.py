@@ -6,4 +6,5 @@ urlpatterns = patterns('',
     # ex: /polls/
     url(r'^$', views.index, name='index'),
     url(r'^add/', views.add, name='add'),
+    url(r'^compare/', views.compare, name='compare'),
 )

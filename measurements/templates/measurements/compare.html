@@ -1,0 +1,11 @@
+{% extends "master.html" %}
+
+{% block scripts %}
+    {% load staticfiles %}
+    <script type="text/javascript" src="{% static "measurements/js/compare_chart.js" %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="loading-icon"></div>
+    <div class="compare-chart"></div>
+{% endblock %}

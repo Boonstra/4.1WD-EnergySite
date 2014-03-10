@@ -1,33 +1,45 @@
 <!doctype html>
 <html>
-<head><title>Energy</title></head>
+<head>
+    <title>Energy</title>
+
+    {% load staticfiles %}
+    <link type="text/css" href="{% static "css/style.css" %}" />
+
+    <script type="text/javascript" src="{% static "js/mootools-core-1.4.5-full-nocompat.js" %}"></script>
+    {% block scripts %}{% endblock %}
+</head>
 <body>
-<ul>
-    <li><a href="{{ '/' }}"><b>Home</b></a></li>
-    {% if not user.is_authenticated %}
-        <li><a href="{% url 'facilities.views.login' %}"><b>Login</b></a></li>
-        <li><a href="{% url 'facilities.views.register' %}"><b>Register</b></a></li>
+    <div class="header">
+        <ul>
+            <li><a href="{{ '/' }}"><b>Home</b></a></li>
+            {% if not user.is_authenticated %}
+                <li><a href="{% url 'facilities.views.login' %}"><b>Login</b></a></li>
+                <li><a href="{% url 'facilities.views.register' %}"><b>Register</b></a></li>
+            {% else %}
+                <li><a href="{% url 'facilities.views.index' %}"><b>Facilities</b></a></li>
+                <li><a href="{% url 'facilities.views.add' %}">Add facility</a></li>
+                <li><a href="{% url 'facilities.views.view' %}">View your facilities</a></li>
+                <li><a href="{% url 'measurements.views.index' %}"><b>Measurements</b></a></li>
+                <li><a href="{% url 'measurements.views.add' %}">Add measurement</a></li>
+                <li><a href="{% url 'devices.views.index' %}"><b>Devices</b></a></li>
+                <li><a href="{% url 'devices.views.add' %}">Add devices</a></li>
+                <li><a href="{% url 'devices.views.view' %}">View devices</a></li>
+                <li><a href="{% url 'facilities.views.logout' %}"><b>Logout</b></a></li>
+            {% endif %}
+        </ul>
+    </div>
+
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
     {% endif %}
-    {% if user.is_authenticated %}
-    <li><a href="{% url 'facilities.views.index' %}"><b>Facilities</b></a></li>
-    <li><a href="{% url 'facilities.views.add' %}">Add facility</a></li>
-    <li><a href="{% url 'facilities.views.view' %}">View your facilities</a></li>
-    <li><a href="{% url 'measurements.views.index' %}"><b>Measurements</b></a></li>
-    <li><a href="{% url 'measurements.views.add' %}">Add measurement</a></li>
-    <li><a href="{% url 'devices.views.index' %}"><b>Devices</b></a></li>
-    <li><a href="{% url 'devices.views.add' %}">Add devices</a></li>
-    <li><a href="{% url 'devices.views.view' %}">View devices</a></li>
-    <li><a href="{% url 'facilities.views.logout' %}"><b>Logout</b></a></li>
-    {% endif %}
-</ul>
-{% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-    {% endfor %}
-</ul>
-{% endif %}
-{% block content %}
-{% endblock %}
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
 </body>
 </html>
