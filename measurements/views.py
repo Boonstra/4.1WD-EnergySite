@@ -1,22 +1,25 @@
 import datetime
 from django import forms
+from django.contrib.auth.models import User
 from django.http import Http404
 from django.shortcuts import render
 from rest_framework import viewsets
 from measurements.models import Measurement, Time
+from devices.models import Device
+from facilities.models import Facility
 from measurements.serializers import MeasurementSerializer
 
 
 class AddMeasurementToDeviceForm(forms.Form):
-
     times = forms.ModelChoiceField(queryset=Time.objects.all())
-    user_id = forms.IntegerField()
+    devices = forms.ModelChoiceField(queryset=None)
+    measurement = forms.FloatField(label='Measurement in kWh')
 
     def __init__(self, *args, **kwargs):
-        user_id = kwargs.pop('user_id')
+        user = kwargs.pop('user')
         super(AddMeasurementToDeviceForm, self).__init__(*args, **kwargs)
-        if user_id:
-            self.fields['user_id'].initial = user_id
+        if user:
+            self.fields['devices'].queryset = user.facilities.all()[:1].get().devices.all()
 
 
 def index(request):
@@ -56,7 +59,7 @@ def index(request):
 
 
 def add(request):
-    form = AddMeasurementToDeviceForm(user_id=1)
+    form = AddMeasurementToDeviceForm(user=request.user)
     return render(request, 'measurements/add.html', {'form': form})
 
 

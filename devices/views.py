@@ -21,7 +21,7 @@ def add(request):
         if form.is_valid():
             devices = form.cleaned_data['devices']
             facility = Facility.objects.get(pk=request.user.facilities.all()[:1].get().id)
-            facility.device_set.add(devices)
+            facility.devices.add(devices)
 
     all_devices = Device.objects.all()
     user_devices = request.user.facilities.all()
@@ -34,5 +34,5 @@ def add(request):
 
 def view(request):
     user_facilities = Facility.objects.get(pk=request.user.facilities.all()[:1].get().id)
-    user_facilities_devices = user_facilities.device_set.all()
+    user_facilities_devices = user_facilities.devices.all()
     return render(request, 'devices/view.html', {'devices': user_facilities_devices})
