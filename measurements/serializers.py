@@ -3,6 +3,7 @@ from measurements.models import Measurement
 
 
 class MeasurementSerializer(serializers.HyperlinkedModelSerializer):
+
     measurements = serializers.HyperlinkedIdentityField(view_name='measurements', format='html')
 
     # owner = serializers.Field(source='owner.username')
@@ -10,4 +11,4 @@ class MeasurementSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Measurement
-        fields = ('date', 'value')
+        fields = ['time']

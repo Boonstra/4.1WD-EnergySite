@@ -2,13 +2,13 @@ from django.conf.urls import patterns, include, url
 from django.views.generic import TemplateView
 
 from django.contrib import admin
-from rest_framework import viewsets, routers
-from measurements import views
+from rest_framework import routers
+from measurements import views as measurement_views
 
 admin.autodiscover()
 
-api_router = routers.DefaultRouter()
-api_router.register(r'^measurements', views.MeasurementViewSet)
+api_router = routers.SimpleRouter()
+api_router.register(r'^measurements', measurement_views.MeasurementViewSet)
 
 urlpatterns = patterns('',
     url(r'^$', TemplateView.as_view(template_name="index.html")),

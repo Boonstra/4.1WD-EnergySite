@@ -1,8 +1,11 @@
 import datetime
 from django import forms
-from django.http import Http404
+from django.db.models import Avg
+from django.http import Http404, HttpResponse
 from django.shortcuts import render
-from rest_framework import viewsets
+from rest_framework import viewsets, status
+from rest_framework.renderers import JSONRenderer
+from devices.models import Device
 from measurements.models import Measurement, Time
 from measurements.serializers import MeasurementSerializer
 
@@ -17,6 +20,13 @@ class AddMeasurementToDeviceForm(forms.Form):
         super(AddMeasurementToDeviceForm, self).__init__(*args, **kwargs)
         if user_id:
             self.fields['user_id'].initial = user_id
+
+
+class JSONResponse(HttpResponse):
+    def __init__(self, data, **kwargs):
+        content = JSONRenderer().render(data)
+        kwargs['content_type'] = 'application/json'
+        super(JSONResponse, self).__init__(content, **kwargs)
 
 
 def index(request):
@@ -60,6 +70,23 @@ def add(request):
     return render(request, 'measurements/add.html', {'form': form})
 
 
-class MeasurementViewSet(viewsets.ModelViewSet):
-    queryset = Measurement.objects.all()
-    serializer_class = MeasurementSerializer
+def measurements_list(request):
+    measurements = Measurement.objects.all()
+    serializer = MeasurementSerializer(measurements)
+    return JSONResponse(serializer.data)
+
+
+class MeasurementViewSet(viewsets.ViewSet):
+    model = Measurement
+
+    def list(self, request):
+        device_model = request.GET.get('device_model')
+
+        if not device_model:
+            return JSONResponse({})
+
+        device = Device.objects.get(model__contains=device_model)
+
+        measurements = device.measurement_set.values('time').annotate(value=Avg('value'))
+
+        return JSONResponse(measurements)
