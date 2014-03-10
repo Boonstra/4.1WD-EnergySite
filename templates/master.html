@@ -5,19 +5,23 @@
 
     {% load staticfiles %}
 
-    <link type="text/css" href="{% static "css/style.css" %}"/>
+    <link rel="stylesheet" type="text/css"  href="{% static "css/style.css" %}"/>
     {% block styles %}{% endblock %}
 
     <script type="text/javascript" src="{% static "js/mootools-core-1.4.5-full-nocompat.js" %}"></script>
     {% block scripts %}{% endblock %}
 </head>
 <body>
+
 <div class="header">
     <ul>
         <li>
             <a href="/">Home</a>
         </li>
-        {% if user.is_authenticated %}
+        {% if not user.is_authenticated %}
+            <li><a href="{% url 'facilities.views.login' %}">Login</a></li>
+            <li><a href="{% url 'facilities.views.register' %}">Register</a></li>
+        {% else %}
             <li>
                 <a href="{% url 'facilities.views.index' %}">Facilities</a>
                 <ul>
@@ -50,9 +54,10 @@
             <li><a href="{% url 'facilities.views.logout' %}">Logout</a></li>
         {% endif %}
         <li><a href="{% url 'measurements.views.view' %}">View measurement averages</a></li>
-        <li><a href="{% url 'measurements.views.compare' %}">View measurement averages</a></li>
+        <li><a href="{% url 'measurements.views.compare' %}">Compare measurements</a></li>
     </ul>
 </div>
+
 {% if messages %}
     <ul class="messages">
         {% for message in messages %}
@@ -60,8 +65,10 @@
         {% endfor %}
     </ul>
 {% endif %}
+
 <div class="content">
     {% block content %}{% endblock %}
 </div>
+
 </body>
 </html>
