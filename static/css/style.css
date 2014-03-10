@@ -1,0 +1,36 @@
+nav a {
+  text-decoration: none;
+  color: #111;
+  font-weight: bold;
+  display: block;
+}
+nav ul li {
+  display: inline-block;
+  height: 20px;
+  width: 100px;
+  padding: 5px;
+  line-height: 24px;
+  background: #eee;
+  vertical-align: top;
+  list-style: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+nav ul li:hover {
+  height: auto;
+}
+nav ul li ul {
+  margin: 0;
+  padding: 0;
+}
+nav ul li ul li {
+  display: block;
+  padding: 5px;
+  margin: 2px;
+  background: #ccc;
+  list-style: none;
+  cursor: pointer;
+}
+nav ul li ul li:hover {
+  background: #aaa;
+}
