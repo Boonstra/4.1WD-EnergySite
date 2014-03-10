@@ -1,25 +1,26 @@
 import datetime
 from django import forms
 from django.db.models import Avg
-from django.http import Http404, HttpResponse
+from django.http import HttpResponse
+from django.http import Http404
 from django.shortcuts import render
-from rest_framework import viewsets, status
+from rest_framework import viewsets
 from rest_framework.renderers import JSONRenderer
-from devices.models import Device
 from measurements.models import Measurement, Time
+from devices.models import Device
 from measurements.serializers import MeasurementSerializer
 
 
 class AddMeasurementToDeviceForm(forms.Form):
-
     times = forms.ModelChoiceField(queryset=Time.objects.all())
-    user_id = forms.IntegerField()
+    devices = forms.ModelChoiceField(queryset=None)
+    measurement = forms.FloatField(label='Measurement in kWh')
 
     def __init__(self, *args, **kwargs):
-        user_id = kwargs.pop('user_id')
+        user = kwargs.pop('user')
         super(AddMeasurementToDeviceForm, self).__init__(*args, **kwargs)
-        if user_id:
-            self.fields['user_id'].initial = user_id
+        if user:
+            self.fields['devices'].queryset = user.facilities.all()[:1].get().devices.all()
 
 
 class JSONResponse(HttpResponse):
@@ -66,7 +67,7 @@ def index(request):
 
 
 def add(request):
-    form = AddMeasurementToDeviceForm(user_id=1)
+    form = AddMeasurementToDeviceForm(user=request.user)
     return render(request, 'measurements/add.html', {'form': form})
 
 

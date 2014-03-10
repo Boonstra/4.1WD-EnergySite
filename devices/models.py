@@ -7,7 +7,7 @@ class Category(models.Model):
 
 
 class Device(models.Model):
-    facilities = models.ManyToManyField(Facility)
+    facilities = models.ManyToManyField(Facility, related_name='devices')
     category = models.ForeignKey(Category)
     brand = models.CharField(max_length=80)
     model = models.CharField(max_length=80)
