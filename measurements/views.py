@@ -81,13 +81,17 @@ class MeasurementViewSet(viewsets.ViewSet):
     model = Measurement
 
     def list(self, request):
+        comparison_method = request.GET.get('comparison_method')
         device_model = request.GET.get('device_model')
+        device_category_id = request.GET.get('device_category_id')
 
-        if not device_model:
+        if comparison_method == 'type' and device_model:
+            device_ids = Device.objects.filter(model__contains=device_model).values_list('id', flat=True)
+        elif comparison_method == 'category' and device_category_id:
+            device_ids = Device.objects.filter(category=device_category_id).values_list('id', flat=True)
+        else:
             return JSONResponse({})
 
-        device = Device.objects.get(model__contains=device_model)
-
-        measurements = device.measurement_set.values('time').annotate(value=Avg('value'))
+        measurements = Measurement.objects.filter(device__in=device_ids).values('time').annotate(value=Avg('value'))
 
         return JSONResponse(measurements)
