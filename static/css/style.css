@@ -34,3 +34,13 @@ nav ul li ul li {
 nav ul li ul li:hover {
   background: #aaa;
 }
+form p label {
+  display: inline-block;
+  width: 250px;
+  height: 20px;
+}
+form p input {
+  display: inline-block;
+  width: 300px;
+  height: 20px;
+}
