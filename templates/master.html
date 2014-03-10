@@ -8,7 +8,7 @@
     <link type="text/css" href="{% static "css/style.css" %}"/>
     {% block styles %}{% endblock %}
 
-{#    <script type="text/javascript" src="{% static "js/mootools-core-1.4.5-full-nocompat.js" %}"></script>#}
+    <script type="text/javascript" src="{% static "js/mootools-core-1.4.5-full-nocompat.js" %}"></script>
     {% block scripts %}{% endblock %}
 </head>
 <body>
@@ -31,7 +31,6 @@
                     {% endif %}
                 </ul>
             </li>
-
             <li>
                 <a href="{% url 'measurements.views.index' %}">Measurements</a>
                 <ul>
@@ -40,17 +39,18 @@
             </li>
             {% if perms.devices.add_device %}
                 <li>
-                    <a href="{% url 'devices.views.index' %}">Devices</a></li>
-                <ul>
-                    <li><a href="{% url 'devices.views.add' %}">Add devices</a></li>
-                    <li><a href="{% url 'devices.views.view' %}">View devices</a></li>
-                    <li><a href="{% url 'devices.views.remove_device' %}">Remove devices</a></li>
-                </ul>
+                    <a href="{% url 'devices.views.index' %}">Devices</a>
+                    <ul>
+                        <li><a href="{% url 'devices.views.add' %}">Add devices</a></li>
+                        <li><a href="{% url 'devices.views.view' %}">View devices</a></li>
+                        <li><a href="{% url 'devices.views.remove_device' %}">Remove devices</a></li>
+                    </ul>
                 </li>
             {% endif %}
             <li><a href="{% url 'facilities.views.logout' %}">Logout</a></li>
         {% endif %}
         <li><a href="{% url 'measurements.views.view' %}">View measurement averages</a></li>
+        <li><a href="{% url 'measurements.views.compare' %}">View measurement averages</a></li>
     </ul>
 </div>
 {% if messages %}
