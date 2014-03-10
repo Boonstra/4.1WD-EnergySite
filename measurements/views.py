@@ -1,7 +1,7 @@
 import datetime
 from django import forms
 
-from django.contrib.auth.decorators import login_required
+from django.core import serializers
 
 from django.db.models import Avg
 from django.http import HttpResponse
@@ -10,9 +10,8 @@ from django.http import Http404
 from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework.renderers import JSONRenderer
-from devices.models import Device
+from devices.models import Device, Category
 from measurements.models import Measurement, Time
-from measurements.serializers import MeasurementSerializer
 
 
 class AddMeasurementToDeviceForm(forms.Form):
@@ -92,7 +91,6 @@ def add(request):
     return render(request, 'measurements/add.html', {'form': form})
 
 
-
 def view(request):
     if request.method == 'POST':
         form = ViewDeviceAveragesForm(request.POST)
@@ -117,7 +115,11 @@ def view(request):
 
 
 def compare(request):
-    return render(request, 'measurements/compare.html', {})
+    categories = Category.objects.all()
+    models = Device.objects.distinct()
+    times = serializers.serialize('json', Time.objects.all())
+
+    return render(request, 'measurements/compare.html', {'categories': categories, 'models': models, 'times': times})
 
 
 class MeasurementViewSet(viewsets.ViewSet):

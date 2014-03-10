@@ -1,99 +1,57 @@
 {% extends "master.html" %}
 
-{% block styles %}
-    <link type="text/css" href="http://raphaeljs.com/demo.css" />
-    <link type="text/css" href="http://raphaeljs.com/demo-print.css" />
-{% endblock %}
-
 {% block scripts %}
     {% load staticfiles %}
 
-
-    <script type="text/javascript" src="{% static "js/temp/raphael.js" %}"></script>
-    <script type="text/javascript" src="{% static "js/temp/popup.js" %}"></script>
-    <script type="text/javascript" src="{% static "js/temp/jquery.js" %}"></script>
-    <script type="text/javascript" src="{% static "js/temp/analytics.js" %}"></script>
-
-
-{#    <script type="text/javascript" src="{% static "js/raphael-min.js" %}"></script>#}
-{#    <script type="text/javascript" src="{% static "measurements/js/compare_chart.js" %}"></script>#}
+    <script type="text/javascript" src="{% static "js/raphael/raphael.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/raphael/raphael.popup.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/raphael/raphael.drawGrid.js" %}"></script>
+    <script type="text/javascript" src="{% static "measurements/js/compare_chart.js" %}"></script>
+    <script type="text/javascript">
+        var times = {% autoescape off %} {{ times }}{% endautoescape %};
+    </script>
 {% endblock %}
 
 {% block content %}
-    <div class="loading-icon"></div>
-    <div class="compare-chart"></div>
+    <table>
+        <tr>
+            <td><label for="comparison-method">Comparison method</label></td>
+            <td>
+                <select id="comparison-method" class="comparison-method">
+                    <option value="type">Type</option>
+                    <option value="category">Category</option>
+                </select>
+            </td>
+        </tr>
 
-    <table id="data">
-        <tfoot>
-            <tr>
-                <th>1</th>
-                <th>2</th>
-                <th>3</th>
-                <th>4</th>
-                <th>5</th>
-                <th>6</th>
-                <th>7</th>
-                <th>8</th>
-                <th>9</th>
-                <th>10</th>
-                <th>11</th>
-                <th>12</th>
-                <th>13</th>
-                <th>14</th>
-                <th>15</th>
-                <th>16</th>
-                <th>17</th>
-                <th>18</th>
-                <th>19</th>
-                <th>19</th>
-                <th>20</th>
-                <th>22</th>
-                <th>23</th>
-                <th>24</th>
-                <th>25</th>
-                <th>26</th>
-                <th>27</th>
-                <th>28</th>
-                <th>29</th>
-                <th>30</th>
-                <th>31</th>
-            </tr>
-        </tfoot>
-        <tbody>
-            <tr>
-                <td>8</td>
-                <td>25</td>
-                <td>27</td>
-                <td>25</td>
-                <td>54</td>
-                <td>59</td>
-                <td>79</td>
-                <td>47</td>
-                <td>27</td>
-                <td>44</td>
-                <td>44</td>
-                <td>51</td>
-                <td>56</td>
-                <td>83</td>
-                <td>12</td>
-                <td>91</td>
-                <td>52</td>
-                <td>12</td>
-                <td>40</td>
-                <td>8</td>
-                <td>60</td>
-                <td>29</td>
-                <td>7</td>
-                <td>33</td>
-                <td>56</td>
-                <td>25</td>
-                <td>1</td>
-                <td>78</td>
-                <td>70</td>
-                <td>68</td>
-                <td>2</td>
-            </tr>
-        </tbody>
+        <tr>
+            <td><label for="device-model">Model</label></td>
+            <td>
+                <select id="device-model" class="device-model">
+                    {% for model in models %}
+                        <option value="{{ model.model }}">{{ model.model }}</option>
+                    {% endfor %}
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td><label for="device-category">Category</label></td>
+            <td>
+                <select id="device-category" class="device-category">
+                    {% for category in categories %}
+                        <option value="{{ category.id }}">{{ category.category }}</option>
+                    {% endfor %}
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td><label for="zipcode">Zipcode</label></td>
+            <td><input type="text" id="zipcode" class="zipcode" /></td>
+        </tr>
     </table>
-    <div id="holder"></div>
+
+    <div class="loading-icon"></div>
+    <div id="compare-chart"></div>
 {% endblock %}
