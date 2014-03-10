@@ -8,4 +8,5 @@ urlpatterns = patterns('',
     url(r'^$', 'devices.views.index', name='index'),
     url(r'^add/', 'devices.views.add', name='add'),
     url(r'^view/', 'devices.views.view', name='view'),
+    url(r'^remove/', 'devices.views.remove_device', name='remove')
 )

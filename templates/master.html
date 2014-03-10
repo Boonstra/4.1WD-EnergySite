@@ -10,15 +10,25 @@
     {% endif %}
     {% if user.is_authenticated %}
     <li><a href="{% url 'facilities.views.index' %}"><b>Facilities</b></a></li>
+        {% if perms.facilities.add_facility %}
     <li><a href="{% url 'facilities.views.add' %}">Add facility</a></li>
+        {% endif %}
     <li><a href="{% url 'facilities.views.view' %}">View your facilities</a></li>
+        {% if perms.facilities.add_resident %}
+    <li><a href="{% url 'facilities.views.register_resident' %}">Register a resident</a></li>
+    <li><a href="{% url 'facilities.views.delete_resident' %}">Delete residents</a></li>
+        {% endif %}
     <li><a href="{% url 'measurements.views.index' %}"><b>Measurements</b></a></li>
     <li><a href="{% url 'measurements.views.add' %}">Add measurement</a></li>
+        {% if perms.devices.add_device %}
     <li><a href="{% url 'devices.views.index' %}"><b>Devices</b></a></li>
     <li><a href="{% url 'devices.views.add' %}">Add devices</a></li>
     <li><a href="{% url 'devices.views.view' %}">View devices</a></li>
+    <li><a href="{% url 'devices.views.remove_device' %}">Remove devices</a></li>
+        {% endif %}
     <li><a href="{% url 'facilities.views.logout' %}"><b>Logout</b></a></li>
     {% endif %}
+    <li><a href="{% url 'measurements.views.view' %}">View measurement averages</a></li>
 </ul>
 {% if messages %}
 <ul class="messages">

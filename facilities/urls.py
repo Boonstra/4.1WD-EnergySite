@@ -9,6 +9,8 @@ urlpatterns = patterns('',
     url(r'^add/', 'facilities.views.add', name='add'),
     url(r'^view/', 'facilities.views.view', name='view'),
     url(r'^register/', 'facilities.views.register', name='register'),
+    url(r'^register_resident/', 'facilities.views.register_resident'),
+    url(r'^delete_residents/', 'facilities.views.delete_resident'),
     url(r'^login/', 'facilities.views.login', name='login'),
     url(r'^logout/', 'facilities.views.logout', name='logout'),
 )

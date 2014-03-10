@@ -1,6 +1,6 @@
 import datetime
 from django import forms
-from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from django.http import Http404
 from django.shortcuts import render
 from rest_framework import viewsets
@@ -20,6 +20,10 @@ class AddMeasurementToDeviceForm(forms.Form):
         super(AddMeasurementToDeviceForm, self).__init__(*args, **kwargs)
         if user:
             self.fields['devices'].queryset = user.facilities.all()[:1].get().devices.all()
+
+
+class ViewDeviceAveragesForm(forms.Form):
+    device = forms.ModelChoiceField(queryset=Device.objects.all())
 
 
 def index(request):
@@ -59,8 +63,44 @@ def index(request):
 
 
 def add(request):
+    if request.method == 'POST':
+        form = AddMeasurementToDeviceForm(request.POST, user=request.user)
+        if form.is_valid():
+            time = form.cleaned_data['times']
+            device = form.cleaned_data['devices']
+            measurement = form.cleaned_data['measurement']
+            new_measurement = Measurement(date=datetime.date.today(), value=measurement)
+            new_measurement.time_id = time.id
+            new_measurement.device_id = device.id
+            new_measurement.facility_id = request.user.facilities.all()[:1].get().id
+            new_measurement.save()
+            return render(request, 'measurements/index.html')
+
     form = AddMeasurementToDeviceForm(user=request.user)
     return render(request, 'measurements/add.html', {'form': form})
+
+
+def view(request):
+    if request.method == 'POST':
+        form = ViewDeviceAveragesForm(request.POST)
+        if form.is_valid():
+            device = form.cleaned_data['device']
+            measurements = Measurement.objects.filter(device_id=device.id)
+            average = 0
+            for measurement in measurements:
+                average += measurement.value
+
+            try:
+                average = (average / measurements.count())
+            except ZeroDivisionError:
+                average = 0
+
+            average = "{0:.2f}".format(average)
+            context = {'average': average}
+            return render(request, 'measurements/view.html', context)
+
+    context = {'form': ViewDeviceAveragesForm}
+    return render(request, 'measurements/view.html', context)
 
 
 class MeasurementViewSet(viewsets.ModelViewSet):

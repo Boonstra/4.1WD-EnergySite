@@ -12,3 +12,10 @@ class Facility(models.Model):
     email = models.CharField(max_length=80)
     phone_number = models.CharField(max_length=80)
     password = models.CharField(max_length=256)
+
+    class Meta:
+        permissions = (
+            ("add_resident", "Can add a resident"),
+            ("view_residents", "Can view residents"),
+            ("edit_resident", "Can edit a resident"),
+        )
