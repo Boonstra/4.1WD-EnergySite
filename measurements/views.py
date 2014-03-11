@@ -1,5 +1,6 @@
 import datetime
 from django import forms
+from django.contrib.auth.models import User
 
 from django.core import serializers
 
@@ -119,7 +120,9 @@ def compare(request):
     models = Device.objects.distinct()
     times = serializers.serialize('json', Time.objects.all())
 
-    return render(request, 'measurements/compare.html', {'categories': categories, 'models': models, 'times': times})
+    return render(request, 'measurements/compare.html', {'categories': categories,
+                                                         'models': models,
+                                                         'times': times})
 
 
 class MeasurementViewSet(viewsets.ViewSet):
@@ -134,15 +137,28 @@ class MeasurementViewSet(viewsets.ViewSet):
         if not zipcode:
             zipcode = ''
 
+        facilities = None
+        if request.user:
+            facilities = request.user.facilities.all()
+
+        current_user_measurements = []
+
         if comparison_method == 'type' and device_model:
-            # device_ids = Device.objects.filter(model__contains=device_model).values_list('id', flat=True)
-            measurements = Measurement.objects.filter(device__model__contains=device_model,
-                                                      facility__zipcode__contains=zipcode)
+            average_measurements = Measurement.objects.filter(device__model__contains=device_model,
+                                                              facility__zipcode__contains=zipcode)
+            if facilities:
+                current_user_measurements = Measurement.objects.filter(device__model__contains=device_model,
+                                                                       facility=facilities[0].id,
+                                                                       date=datetime.date.today())
         elif comparison_method == 'category' and device_category_id:
-            # device_ids = Device.objects.filter(category=device_category_id).values_list('id', flat=True)
-            measurements = Measurement.objects.filter(device__category=device_category_id,
-                                                      facility__zipcode__contains=zipcode)
+            average_measurements = Measurement.objects.filter(device__category=device_category_id,
+                                                              facility__zipcode__contains=zipcode)
+            if facilities:
+                current_user_measurements = Measurement.objects.filter(device__category=device_category_id,
+                                                                       facility=facilities[0].id,
+                                                                       date=datetime.date.today())
         else:
             return JSONResponse([])
 
-        return JSONResponse(measurements.values('time').annotate(value=Avg('value')))
+        return JSONResponse({'average_measurements': average_measurements.values('time').annotate(value=Avg('value')),
+                             'current_user_measurements': current_user_measurements.values('time').annotate(value=Avg('value'))})

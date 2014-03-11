@@ -17,14 +17,21 @@ compare_chart = function()
         self.$deviceCategoryField   = $$('.device-category');
         self.$zipcodeField          = $$('.zipcode');
 
-        self.getGraphData();
+        self.$comparisonMethodField.addEvent('change', function(){ self.reloadGraphData(); });
+        self.$deviceModelField.addEvent('change', function(){ self.reloadGraphData(); });
+        self.$deviceCategoryField.addEvent('change', function(){ self.reloadGraphData(); });
+        self.$zipcodeField.addEvent('change', function(){ self.reloadGraphData(); });
+
+        self.reloadGraphData();
     };
 
     /**
      * Retrieves the data for the graph.
      */
-    self.getGraphData = function()
+    self.reloadGraphData = function()
     {
+        console.log('reloading graph');
+
         var comparisonMethodFieldValue = self.$comparisonMethodField[0].getSelected().get('value'),
             deviceModelFieldValue      = self.$deviceModelField[0].getSelected().get('value'),
             deviceCategoryFieldValue   = self.$deviceCategoryField[0].getSelected().get('value'),
@@ -33,23 +40,27 @@ compare_chart = function()
         new Request({
             url: 'http://localhost:8888/api/measurements/',
             method: 'get',
-            onSuccess: function(responseText){
-                var labelAndData = self.parseJSONMeasurementsAsLabelAndData(JSON.parse(responseText));
+            onSuccess: function(responseText)
+            {
+                var json          = JSON.parse(responseText),
+                    labelAndData1 = self.parseJSONMeasurementsAsLabelAndData(json['current_user_measurements']),
+                    labelAndData2 = self.parseJSONMeasurementsAsLabelAndData(json['average_measurements']);
 
-                self.graphLabels2 = labelAndData['labels'];
-                self.graphData2   = labelAndData['data'];
+                self.graphLabels1 = labelAndData1['labels'];
+                self.graphData1   = labelAndData1['data'];
+                self.graphLabels2 = labelAndData2['labels'];
+                self.graphData2   = labelAndData2['data'];
 
                 self.drawLineGraph();
             },
-            onFailure: function(){
+            onFailure: function()
+            {
                 console.log('Request failed');
             }
         }).send('comparison_method=' + comparisonMethodFieldValue + '&' +
                 'device_model=' + deviceModelFieldValue + '&' +
                 'device_category_id=' + deviceCategoryFieldValue + '&' +
                 'zipcode=' + zipcodeFieldValue);
-
-        self.drawLineGraph();
     };
 
     /**
@@ -80,22 +91,10 @@ compare_chart = function()
         }
 
         // Grab the data
-        var labels       = [],
-            data         = [],
-            measurements = JSON.parse('[{"time": 1, "value": 0.03}, {"time": 2, "value": 0.035}, {"time": 3, "value": 0.045000000000000005}, {"time": 4, "value": 0.065}, {"time": 5, "value": 0.125}, {"time": 6, "value": 0.15000000000000002}, {"time": 7, "value": 0.15000000000000002}, {"time": 8, "value": 0.55}, {"time": 9, "value": 0.45}, {"time": 10, "value": 0.33999999999999997}]');
-
-        for (var measurementsIndex = 0; measurementsIndex < measurements.length; measurementsIndex++)
-        {
-            data.push(Math.round(measurements[measurementsIndex].value * 100) / 100);
-
-            for (var timesIndex = 0; timesIndex < times.length; timesIndex++)
-            {
-                if (times[timesIndex].pk === measurements[measurementsIndex].time)
-                {
-                    labels.push(times[timesIndex].fields.time);
-                }
-            }
-        }
+        var labels1 = self.graphLabels1,
+            data1   = self.graphData1,
+            labels2 = self.graphLabels2,
+            data2    = self.graphData2;
 
         // Draw
         var width = 800,
@@ -103,92 +102,151 @@ compare_chart = function()
             leftgutter = 30,
             bottomgutter = 20,
             topgutter = 20,
-            colorhue = .6 || Math.random(),
-            color = "hsl(" + [colorhue, .5, .5] + ")",
+            colorhue1 = .6 || Math.random(),
+            colorhue2 = .3 || Math.random(),
+            color1 = "hsl(" + [colorhue1, .5, .5] + ")",
+            color2 = "hsl(" + [colorhue2, .5, .5] + ")",
             r = Raphael("compare-chart", width, height),
-            txt = {font: '12px Helvetica, Arial', fill: "#fff"},
-            txt1 = {font: '10px Helvetica, Arial', fill: "#000"},
-            txt2 = {font: '12px Helvetica, Arial', fill: "#000"},
-            X = (width - leftgutter) / labels.length,
-            max = Math.max.apply(Math, data),
+            txt = {font: '12px Helvetica, Arial', fill: "#000"},
+            X = (width - leftgutter) / labels2.length,
+            max = Math.max.apply(Math, data2),
             Y = (height - bottomgutter - topgutter) / max;
         r.drawGrid(leftgutter + X * .5 + .5, topgutter + .5, width - leftgutter - X, height - topgutter - bottomgutter, 10, 10, "#000");
-        var path = r.path().attr({stroke: color, "stroke-width": 4, "stroke-linejoin": "round"}),
-            bgp = r.path().attr({stroke: "none", opacity: .3, fill: color}),
+        var path1 = r.path().attr({stroke: color1, "stroke-width": 4, "stroke-linejoin": "round"}),
+            path2 = r.path().attr({stroke: color2, "stroke-width": 4, "stroke-linejoin": "round"}),
             label = r.set(),
             lx = 0, ly = 0,
             is_label_visible = false,
             leave_timer,
             blanket = r.set();
-        label.push(r.text(60, 12, "").attr(txt));
-        label.push(r.text(60, 27, "").attr(txt1).attr({fill: color}));
+        label.push(r.text(0, 0, "").attr(txt));
         label.hide();
-        var frame = r.popup(100, 100, label, "right").attr({fill: "#000", stroke: "#666", "stroke-width": 2, "fill-opacity": .7}).hide();
 
-        var p, bgpp;
-        for (var i = 0, ii = labels.length; i < ii; i++) {
-            var y = Math.round(height - bottomgutter - Y * data[i]),
-                x = Math.round(leftgutter + X * (i + .5)),
-                t = r.text(x, height - 6, labels[i]).attr(txt).toBack();
-            if (!i) {
-                p = ["M", x, y, "C", x, y];
-                bgpp = ["M", leftgutter + X * .5, height - bottomgutter, "L", x, y, "C", x, y];
+        var frame = r.popup(100, 100, label, "right").attr({fill: "#fff", stroke: "#666", "stroke-width": 2, "fill-opacity": .7}).hide();
+
+        (function()
+        {
+            var p, bgpp;
+            for (var i = 0, ii = labels1.length; i < ii; i++) {
+                var y = Math.round(height - bottomgutter - Y * data1[i]),
+                    x = Math.round(leftgutter + X * (i + .5)),
+                    t = r.text(x, height - 6, labels1[i]).attr(txt).toBack();
+                if (!i) {
+                    p = ["M", x, y, "C", x, y];
+                    bgpp = ["M", leftgutter + X * .5, height - bottomgutter, "L", x, y, "C", x, y];
+                }
+                if (i && i < ii - 1) {
+                    var Y0 = Math.round(height - bottomgutter - Y * data1[i - 1]),
+                        X0 = Math.round(leftgutter + X * (i - .5)),
+                        Y2 = Math.round(height - bottomgutter - Y * data1[i + 1]),
+                        X2 = Math.round(leftgutter + X * (i + 1.5));
+                    var a = getAnchors(X0, Y0, x, y, X2, Y2);
+                    p = p.concat([a.x1, a.y1, x, y, a.x2, a.y2]);
+                    bgpp = bgpp.concat([a.x1, a.y1, x, y, a.x2, a.y2]);
+                }
+                var dot = r.circle(x, y, 4).attr({fill: "#333", stroke: color1, "stroke-width": 2});
+                blanket.push(r.rect(leftgutter + X * i, 0, X, height - bottomgutter).attr({stroke: "none", fill: "#fff", opacity: 0}));
+                var rect = blanket[blanket.length - 1];
+                (function (x, y, data, lbl, dot) {
+                    rect.hover(function () {
+                        clearTimeout(leave_timer);
+                        var side = "right";
+                        if (x + frame.getBBox().width > width) {
+                            side = "left";
+                        }
+                        var ppp = r.popup(x, y, label, side, 1),
+                            anim = Raphael.animation({
+                                path: ppp.path,
+                                transform: ["t", ppp.dx, ppp.dy]
+                            }, 200 * is_label_visible);
+                        lx = label[0].transform()[0][1] + ppp.dx;
+                        ly = label[0].transform()[0][2] + ppp.dy;
+                        frame.show().stop().animate(anim);
+                        label[0].attr({text: data}).show().stop().animateWith(frame, anim, {transform: ["t", lx, ly]}, 200 * is_label_visible);
+                        dot.attr("r", 6);
+                        is_label_visible = true;
+                    }, function () {
+                        dot.attr("r", 4);
+                        leave_timer = setTimeout(function () {
+                            frame.hide();
+                            label[0].hide();
+                            is_label_visible = false;
+                        }, 1);
+                    });
+                })(x, y, data1[i], labels1[i], dot);
             }
-            if (i && i < ii - 1) {
-                var Y0 = Math.round(height - bottomgutter - Y * data[i - 1]),
-                    X0 = Math.round(leftgutter + X * (i - .5)),
-                    Y2 = Math.round(height - bottomgutter - Y * data[i + 1]),
-                    X2 = Math.round(leftgutter + X * (i + 1.5));
-                var a = getAnchors(X0, Y0, x, y, X2, Y2);
-                p = p.concat([a.x1, a.y1, x, y, a.x2, a.y2]);
-                bgpp = bgpp.concat([a.x1, a.y1, x, y, a.x2, a.y2]);
+
+            p = p.concat([x, y, x, y]);
+            bgpp = bgpp.concat([x, y, x, y, "L", x, height - bottomgutter, "z"]);
+            path1.attr({path: p});
+            frame.toFront();
+            label[0].toFront();
+            blanket.toFront();
+        })();
+
+        (function()
+        {
+            var p, bgpp;
+            for (var i = 0, ii = labels2.length; i < ii; i++) {
+                var y = Math.round(height - bottomgutter - Y * data2[i]),
+                    x = Math.round(leftgutter + X * (i + .5)),
+                    t = r.text(x, height - 6, labels2[i]).attr(txt).toBack();
+                if (!i) {
+                    p = ["M", x, y, "C", x, y];
+                    bgpp = ["M", leftgutter + X * .5, height - bottomgutter, "L", x, y, "C", x, y];
+                }
+                if (i && i < ii - 1) {
+                    var Y0 = Math.round(height - bottomgutter - Y * data2[i - 1]),
+                        X0 = Math.round(leftgutter + X * (i - .5)),
+                        Y2 = Math.round(height - bottomgutter - Y * data2[i + 1]),
+                        X2 = Math.round(leftgutter + X * (i + 1.5));
+                    var a = getAnchors(X0, Y0, x, y, X2, Y2);
+                    p = p.concat([a.x1, a.y1, x, y, a.x2, a.y2]);
+                    bgpp = bgpp.concat([a.x1, a.y1, x, y, a.x2, a.y2]);
+                }
+                var dot = r.circle(x, y, 4).attr({fill: "#333", stroke: color1, "stroke-width": 2});
+                blanket.push(r.rect(leftgutter + X * i, 0, X, height - bottomgutter).attr({stroke: "none", fill: "#fff", opacity: 0}));
+                var rect = blanket[blanket.length - 1];
+                (function (x, y, data, lbl, dot) {
+                    rect.hover(function () {
+                        clearTimeout(leave_timer);
+                        var side = "right";
+                        if (x + frame.getBBox().width > width) {
+                            side = "left";
+                        }
+                        var ppp = r.popup(x, y, label, side, 1),
+                            anim = Raphael.animation({
+                                path: ppp.path,
+                                transform: ["t", ppp.dx, ppp.dy]
+                            }, 200 * is_label_visible);
+                        lx = label[0].transform()[0][1] + ppp.dx;
+                        ly = label[0].transform()[0][2] + ppp.dy;
+                        frame.show().stop().animate(anim);
+                        label[0].attr({text: data}).show().stop().animateWith(frame, anim, {transform: ["t", lx, ly]}, 200 * is_label_visible);
+                        dot.attr("r", 6);
+                        is_label_visible = true;
+                    }, function () {
+                        dot.attr("r", 4);
+                        leave_timer = setTimeout(function () {
+                            frame.hide();
+                            label[0].hide();
+                            is_label_visible = false;
+                        }, 1);
+                    });
+                })(x, y, data2[i], labels2[i], dot);
             }
-            var dot = r.circle(x, y, 4).attr({fill: "#333", stroke: color, "stroke-width": 2});
-            blanket.push(r.rect(leftgutter + X * i, 0, X, height - bottomgutter).attr({stroke: "none", fill: "#fff", opacity: 0}));
-            var rect = blanket[blanket.length - 1];
-            (function (x, y, data, lbl, dot) {
-                var timer, i = 0;
-                rect.hover(function () {
-                    clearTimeout(leave_timer);
-                    var side = "right";
-                    if (x + frame.getBBox().width > width) {
-                        side = "left";
-                    }
-                    var ppp = r.popup(x, y, label, side, 1),
-                        anim = Raphael.animation({
-                            path: ppp.path,
-                            transform: ["t", ppp.dx, ppp.dy]
-                        }, 200 * is_label_visible);
-                    lx = label[0].transform()[0][1] + ppp.dx;
-                    ly = label[0].transform()[0][2] + ppp.dy;
-                    frame.show().stop().animate(anim);
-                    label[0].attr({text: data}).show().stop().animateWith(frame, anim, {transform: ["t", lx, ly]}, 200 * is_label_visible);
-                    label[1].attr({text: ""}).show().stop().animateWith(frame, anim, {transform: ["t", lx, ly]}, 200 * is_label_visible);
-                    dot.attr("r", 6);
-                    is_label_visible = true;
-                }, function () {
-                    dot.attr("r", 4);
-                    leave_timer = setTimeout(function () {
-                        frame.hide();
-                        label[0].hide();
-                        label[1].hide();
-                        is_label_visible = false;
-                    }, 1);
-                });
-            })(x, y, data[i], labels[i], dot);
-        }
-        p = p.concat([x, y, x, y]);
-        bgpp = bgpp.concat([x, y, x, y, "L", x, height - bottomgutter, "z"]);
-        path.attr({path: p});
-        bgp.attr({path: bgpp});
-        frame.toFront();
-        label[0].toFront();
-        label[1].toFront();
-        blanket.toFront();
+
+            p = p.concat([x, y, x, y]);
+            bgpp = bgpp.concat([x, y, x, y, "L", x, height - bottomgutter, "z"]);
+            path2.attr({path: p});
+            frame.toFront();
+            label[0].toFront();
+            blanket.toFront();
+        })();
     };
 
     /**
-     *
+     * Parse measurements as labels and data
      */
     self.parseJSONMeasurementsAsLabelAndData = function(measurements)
     {
@@ -208,7 +266,7 @@ compare_chart = function()
             }
         }
 
-        return {label: labels, data: data};
+        return {labels: labels, data: data};
     };
 
     window.addEvent('domready', function()
