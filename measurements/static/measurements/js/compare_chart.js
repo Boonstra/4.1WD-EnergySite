@@ -57,6 +57,8 @@ compare_chart = function()
      */
     self.drawLineGraph = function()
     {
+        $('compare-chart').set('html', '');
+
         function getAnchors(p1x, p1y, p2x, p2y, p3x, p3y) {
             var l1 = (p2x - p1x) / 2,
                 l2 = (p3x - p2x) / 2,
