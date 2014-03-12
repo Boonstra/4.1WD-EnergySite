@@ -1,46 +1,72 @@
-nav a {
-  text-decoration: none;
-  color: #111;
-  font-weight: bold;
-  display: block;
+* {
+  color: #111111;
 }
-nav ul li {
-  display: inline-block;
-  height: 20px;
-  width: 100px;
-  padding: 5px;
-  line-height: 24px;
-  background: #eee;
-  vertical-align: top;
-  list-style: none;
-  cursor: pointer;
-  overflow: hidden;
-}
-nav ul li:hover {
-  height: auto;
-}
-nav ul li ul {
+html,
+body {
   margin: 0;
   padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-nav ul li ul li {
+.grey-bar {
+  position: absolute;
+  height: 40px;
+  width: 100%;
+  background: #eeeeee;
+}
+.wrapper {
+  width: 1000px;
+  margin: 0 auto;
+}
+.wrapper nav {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 0;
+  height: 40px;
+}
+.wrapper nav a {
+  line-height: 40px;
+  text-decoration: none;
   display: block;
-  padding: 5px;
-  margin: 2px;
-  background: #ccc;
+}
+.wrapper nav ul {
+  margin: 0;
+  padding: 0;
   list-style: none;
-  cursor: pointer;
 }
-nav ul li ul li:hover {
-  background: #aaa;
+.wrapper nav ul li {
+  padding: 0 10px;
+  float: left;
+  position: relative;
+  background: #eeeeee;
 }
-form p label {
+.wrapper nav ul li ul {
+  width: auto;
+  margin-left: -10px;
+  display: none;
+  position: absolute;
+}
+.wrapper nav ul li ul li {
+  float: none;
+}
+.wrapper nav ul li ul a {
+  white-space: nowrap;
+}
+.wrapper nav ul li:hover {
+  background: #aaaaaa;
+}
+.wrapper nav ul li:hover ul {
+  display: block;
+}
+.wrapper form p label {
   display: inline-block;
   width: 250px;
   height: 20px;
 }
-form p input {
+.wrapper form p input {
   display: inline-block;
   width: 300px;
   height: 20px;
+}
+.clear {
+  clear: both;
 }

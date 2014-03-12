@@ -1,55 +1,133 @@
-nav {
-  a {
-    text-decoration: none;
-    color: #111;
-    font-weight: bold;
-    display: block;
-  }
-  ul {
-    li {
-      display: inline-block;
-      height: 20px;
-      width: 100px;
-      padding: 5px;
-      line-height: 24px;
-      background: #eee;
-      vertical-align: top;
+// Colors
+@light-grey: #eee;
+@grey: #aaa;
+@text-color: #111;
+
+// Sizes
+@menu-height: 40px;
+@page-width: 1000px;
+
+*
+{
+  color: @text-color;
+}
+
+html,
+body
+{
+  margin: 0;
+  padding: 0;
+
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.grey-bar
+{
+  position: absolute;
+
+  height: @menu-height;
+  width: 100%;
+
+  background: @light-grey;
+}
+
+.wrapper
+{
+  width: 1000px;
+
+  margin: 0 auto;
+
+  nav
+  {
+    width: @page-width;
+
+    margin: 0 auto;
+    padding: 0;
+
+    height: @menu-height;
+
+    a
+    {
+      line-height: @menu-height;
+
+      text-decoration: none;
+
+      display: block;
+    }
+
+    ul
+    {
+      margin: 0;
+      padding: 0;
+
       list-style: none;
-      cursor: pointer;
-      overflow:hidden;
-      &:hover {
-        height: auto;
-      }
-      ul {
-        margin: 0;
-        padding: 0;
-        li {
-          display: block;
-          padding: 5px;
-          margin: 2px;
-          background: #ccc;
-          list-style: none;
-          cursor: pointer;
-          &:hover {
-            background: #aaa;
+
+      li
+      {
+        padding: 0 10px;
+
+        float: left;
+
+        position: relative;
+
+        background: @light-grey;
+
+        ul
+        {
+          width: auto;
+
+          margin-left: -10px;
+
+          display: none;
+
+          position: absolute;
+
+          li
+          {
+            float: none;
+          }
+
+          a
+          {
+            white-space: nowrap;
           }
         }
+
+        &:hover
+        {
+          ul
+          {
+            display: block;
+          }
+
+          background: @grey;
+        }
+      }
+    }
+  }
+
+  form
+  {
+    p
+    {
+      label
+      {
+        display: inline-block;
+        width: 250px;
+        height: 20px;
+      }
+
+      input
+      {
+        display: inline-block;
+        width: 300px;
+        height: 20px;
       }
     }
   }
 }
 
-form {
-  p{
-    label {
-      display: inline-block;
-      width: 250px;
-      height: 20px;
-    }
-    input {
-      display: inline-block;
-      width: 300px;
-      height: 20px;
-    }
-  }
+.clear
+{
+  clear: both;
 }
