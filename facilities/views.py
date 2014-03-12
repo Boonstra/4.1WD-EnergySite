@@ -198,3 +198,9 @@ def delete_resident(request):
         'form': DeleteResidentForm(user=request.user)
     }
     return render(request, 'facilities/delete_resident.html', context)
+
+
+def process_oauth2_login(request):
+    group = Group.objects.get(name="facility_owners")
+    group.user_set.add(request.user)
+    return render(request, 'index.html')

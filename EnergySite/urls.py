@@ -20,4 +20,5 @@ urlpatterns = patterns('',
     url(r'^api/', include(api_router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^accounts/', include('allauth.urls')),
+    url(r'^accounts/profile/', 'facilities.views.process_oauth2_login'),
 )
