@@ -138,7 +138,7 @@ class MeasurementViewSet(viewsets.ViewSet):
             zipcode = ''
 
         facilities = None
-        if request.user:
+        if not request.user.is_anonymous():
             facilities = request.user.facilities.all()
 
         current_user_measurements = []
@@ -150,6 +150,7 @@ class MeasurementViewSet(viewsets.ViewSet):
                 current_user_measurements = Measurement.objects.filter(device__model__contains=device_model,
                                                                        facility=facilities[0].id,
                                                                        date=datetime.date.today())
+                current_user_measurements = current_user_measurements.values('time').annotate(value=Avg('value'))
         elif comparison_method == 'category' and device_category_id:
             average_measurements = Measurement.objects.filter(device__category=device_category_id,
                                                               facility__zipcode__contains=zipcode)
@@ -157,8 +158,9 @@ class MeasurementViewSet(viewsets.ViewSet):
                 current_user_measurements = Measurement.objects.filter(device__category=device_category_id,
                                                                        facility=facilities[0].id,
                                                                        date=datetime.date.today())
+                current_user_measurements = current_user_measurements.values('time').annotate(value=Avg('value'))
         else:
             return JSONResponse([])
 
         return JSONResponse({'average_measurements': average_measurements.values('time').annotate(value=Avg('value')),
-                             'current_user_measurements': current_user_measurements.values('time').annotate(value=Avg('value'))})
+                             'current_user_measurements': current_user_measurements})

@@ -3,6 +3,7 @@
 }
 html,
 body {
+  height: 100%;
   margin: 0;
   padding: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -12,10 +13,13 @@ body {
   height: 40px;
   width: 100%;
   background: #eeeeee;
+  border-bottom: 2px solid #7fa0b5;
 }
 .wrapper {
   width: 1000px;
+  height: 100%;
   margin: 0 auto;
+  background: #ffffff;
 }
 .wrapper nav {
   width: 1000px;
@@ -44,6 +48,7 @@ body {
   margin-left: -10px;
   display: none;
   position: absolute;
+  z-index: 1000;
 }
 .wrapper nav ul li ul li {
   float: none;
