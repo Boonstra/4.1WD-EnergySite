@@ -46,7 +46,7 @@ INSTALLED_APPS = (
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
-    'allauth.socialaccount.providers.amazon',
+    'allauth.socialaccount.providers.vimeo',
 )
 
 MIDDLEWARE_CLASSES = (
