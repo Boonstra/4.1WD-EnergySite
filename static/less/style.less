@@ -1,7 +1,9 @@
 // Colors
+@white: #fff;
 @light-grey: #eee;
 @grey: #aaa;
 @text-color: #111;
+@light-blue: #9fc8e3;
 
 // Sizes
 @menu-height: 40px;
@@ -15,6 +17,8 @@
 html,
 body
 {
+  height: 100%;
+
   margin: 0;
   padding: 0;
 
@@ -29,13 +33,18 @@ body
   width: 100%;
 
   background: @light-grey;
+
+  border-bottom: 2px solid #7fa0b5;
 }
 
 .wrapper
 {
   width: 1000px;
+  height: 100%;
 
   margin: 0 auto;
+
+  background: @white;
 
   nav
   {
@@ -81,6 +90,8 @@ body
           display: none;
 
           position: absolute;
+
+          z-index: 1000;
 
           li
           {
