@@ -1,16 +1,15 @@
 import datetime
+
 from django import forms
-from django.contrib.auth.models import User
-
 from django.core import serializers
-
 from django.db.models import Avg
 from django.http import HttpResponse
-
 from django.http import Http404
 from django.shortcuts import render
+
 from rest_framework import viewsets
 from rest_framework.renderers import JSONRenderer
+
 from devices.models import Device, Category
 from measurements.models import Measurement, Time
 

@@ -1,4 +1,5 @@
 * {
+  margin: 0;
   color: #111111;
 }
 html,
@@ -16,14 +17,16 @@ body {
   border-bottom: 2px solid #7fa0b5;
 }
 .wrapper {
-  width: 1000px;
+  min-height: 100%;
+  height: auto !important;
   height: 100%;
-  margin: 0 auto;
+  width: 1000px;
+  margin: 0 auto -202px;
   background: #ffffff;
 }
 .wrapper nav {
   width: 1000px;
-  margin: 0 auto;
+  margin: 0 auto 2px;
   padding: 0;
   height: 40px;
 }
@@ -57,20 +60,39 @@ body {
   white-space: nowrap;
 }
 .wrapper nav ul li:hover {
-  background: #aaaaaa;
+  background: #7fa0b5;
 }
 .wrapper nav ul li:hover ul {
   display: block;
 }
-.wrapper form p label {
+.wrapper nav ul li:hover > a {
+  color: #eeeeee;
+}
+.wrapper .content {
+  padding: 10px;
+}
+.wrapper .content form p label {
   display: inline-block;
   width: 250px;
   height: 20px;
 }
-.wrapper form p input {
+.wrapper .content form p input {
   display: inline-block;
   width: 300px;
   height: 20px;
+}
+.wrapper .push {
+  height: 202px;
+}
+.footer {
+  height: 200px;
+  line-height: 200px;
+  background: #eeeeee;
+  border-top: 2px solid #7fa0b5;
+}
+.footer .inner-footer {
+  width: 1000px;
+  margin: 0 auto;
 }
 .clear {
   clear: both;
