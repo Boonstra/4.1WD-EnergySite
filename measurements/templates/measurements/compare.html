@@ -3,12 +3,10 @@
 {% block scripts %}
     {% load staticfiles %}
 
-    <script type="text/javascript" src="{% static "js/raphael/raphael.js" %}"></script>
-    <script type="text/javascript" src="{% static "js/raphael/raphael.popup.js" %}"></script>
-    <script type="text/javascript" src="{% static "js/raphael/raphael.drawGrid.js" %}"></script>
-    <script type="text/javascript" src="{% static "measurements/js/compare_chart.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/raphael/raphael.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "measurements/js/min/compare_chart.min.js" %}"></script>
     <script type="text/javascript">
-        var times                   = {% autoescape off %}{{ times }}{% endautoescape %};
+        var times = {% autoescape off %}{{ times }}{% endautoescape %};
     </script>
 {% endblock %}
 

@@ -8,7 +8,8 @@
     <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}"/>
     {% block styles %}{% endblock %}
 
-    <script type="text/javascript" src="{% static "js/mootools-core-1.4.5-full-nocompat.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/mootools/mootools-core-1.4.5.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/min/flickr-image-slider.min.js" %}"></script>
     {% block scripts %}{% endblock %}
 </head>
 <body>
@@ -81,9 +82,7 @@
 
 <div class="footer">
     <div class="inner-footer">
-
-
-
+        <div class="flickr-image-slider"></div>
     </div>
 </div>
 

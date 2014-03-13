@@ -1,5 +1,5 @@
 from django.db import models
 
 
-class Image(models.Model):
+class FlickrImage(models.Model):
     pass

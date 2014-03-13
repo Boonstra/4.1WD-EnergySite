@@ -4,11 +4,13 @@ from django.views.generic import TemplateView
 from django.contrib import admin
 from rest_framework import routers
 from measurements import views as measurement_views
+from flickr_images import views as flickr_images_views
 
 admin.autodiscover()
 
 api_router = routers.SimpleRouter()
 api_router.register(r'^measurements', measurement_views.MeasurementViewSet)
+api_router.register(r'^flickr-images', flickr_images_views.ImagesViewSet)
 
 urlpatterns = patterns('',
     url(r'^$', TemplateView.as_view(template_name="index.html")),
