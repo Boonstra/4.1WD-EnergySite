@@ -37,8 +37,6 @@ var flickr_image_slider = function()
         {
             image = self.imageBuffer.shift();
 
-            console.log(image);
-
             // Image
             $image = new Element('img', {
                 'src': 'http://farm' + image.farm + '.staticflickr.com/' + image.server + '/' + image.id + '_' + image.secret + '_q.jpg'
@@ -96,8 +94,6 @@ var flickr_image_slider = function()
 
         setTimeout(function()
         {
-            if (self.page > 5) return;
-
             self.start();
         }, refreshRate);
     };
@@ -111,7 +107,6 @@ var flickr_image_slider = function()
 
         setInterval(function()
         {
-            console.log(typeof self.imageRequest, self.imageBuffer.length);
             if (self.imageBuffer.length <= 2)
             {
                 self.requestImages();
