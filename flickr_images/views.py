@@ -21,7 +21,7 @@ class ImagesViewSet(viewsets.ViewSet):
     def list(self, request):
         settings = FlickrImage.objects.all()[0]
         page = request.GET.get('page')
-        per_page =request.GET.get('page')
+        per_page = request.GET.get('per_page')
 
         if not settings:
             return JSONResponse({})
@@ -48,12 +48,12 @@ class ImagesViewSet(viewsets.ViewSet):
         if search_response.status_code != 200:
             return JSONResponse({})
 
-        flickr_response = search_response.json()
+        flickr_search_response = search_response.json()
 
-        if flickr_response['stat'] != 'ok':
+        if flickr_search_response['stat'] != 'ok':
             return JSONResponse({})
 
-        images = flickr_response['photos']['photo']
+        images = flickr_search_response['photos']['photo']
 
         detailed_images = []
 
@@ -73,6 +73,11 @@ class ImagesViewSet(viewsets.ViewSet):
             if detailed_response.status_code != 200:
                 continue
 
-            detailed_images.append(detailed_response.json())
+            flickr_detailed_response = detailed_response.json()
+
+            if flickr_detailed_response['stat'] != 'ok':
+                continue
+
+            detailed_images.append(flickr_detailed_response['photo'])
 
         return JSONResponse({'images': detailed_images, 'refresh_rate': settings.refresh_rate})
