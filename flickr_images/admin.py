@@ -1,3 +1,5 @@
 from django.contrib import admin
+from flickr_images.models import FlickrImage
 
-# Register your models here.
+
+admin.site.register(FlickrImage)

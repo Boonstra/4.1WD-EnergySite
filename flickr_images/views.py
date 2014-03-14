@@ -19,10 +19,19 @@ class ImagesViewSet(viewsets.ViewSet):
     model = FlickrImage
 
     def list(self, request):
+        settings = FlickrImage.objects.all()[0]
+        page = request.GET.get('page')
+
+        if not settings:
+            return JSONResponse({})
+
+        if not page:
+            page = 1
 
         # Search for images by tag on the Flickr REST API
         response = requests.get('https://api.flickr.com/services/rest/', params={
-            'tags': 'solar',
+            'tags': settings.tags,
+            'page': page,
             'per_page': '1',
 
             # Mandatory parameters
@@ -33,6 +42,6 @@ class ImagesViewSet(viewsets.ViewSet):
         })
 
         if response.status_code == 200:
-            return JSONResponse(response.json())
+            return JSONResponse({'flickr_response': response.json(), 'refresh_rate': settings.refresh_rate})
 
         return JSONResponse({})

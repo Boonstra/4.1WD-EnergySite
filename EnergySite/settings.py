@@ -37,11 +37,12 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'rest_framework',
     'facilities',
     'devices',
     'measurements',
-    'django.contrib.sites',
+    'flickr_images',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -73,6 +74,10 @@ AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",
     "allauth.account.auth_backends.AuthenticationBackend",
 )
+
+CONSTANCE_CONFIG = {
+    'MY_SETTINGS_KEY': (42, 'the answer to everything'),
+}
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
