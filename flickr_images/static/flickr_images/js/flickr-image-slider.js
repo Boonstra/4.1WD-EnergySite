@@ -13,7 +13,8 @@ var flickr_image_slider = function()
         self.imageBuffer       = [];
         self.requestImageTimer = null;
 
-        self.$container = $$('.flickr-image-slider');
+        self.$container    = $$('.flickr-image-slider')[0];
+        self.$currentSlide = null;
 
         self.startRequestingImages();
         self.start();
@@ -24,7 +25,81 @@ var flickr_image_slider = function()
      */
     self.start = function()
     {
+        var refreshRate   = self.refreshRate,
+            containerSize = self.$container.getSize(),
+            animation,
+            $newSlide,
+            $imageLink,
+            $image,
+            image;
 
+        if (self.imageBuffer.length > 0)
+        {
+            image = self.imageBuffer.shift();
+
+            console.log(image);
+
+            // Image
+            $image = new Element('img', {
+                'src': 'http://farm' + image.farm + '.staticflickr.com/' + image.server + '/' + image.id + '_' + image.secret + '_q.jpg'
+            });
+
+            // URL
+            $imageLink = new Element('a', {
+                'href': 'http://www.flickr.com/photos/' + image.owner.nsid + '/' + image.id,
+                'target': '_blank'
+            });
+
+            // Slide
+            $newSlide = new Element('div', {
+                'class' : 'flickr-image-slide'
+            });
+
+            $newSlide.adopt($imageLink.adopt($image));
+
+            // Use the slide animation when replacing the current slide with a new one
+            if (self.$currentSlide != null)
+            {
+                // Hide the new slide outside the container
+                $newSlide.setStyles({
+                    'top' : 0,
+                    'left': -containerSize.x
+                });
+
+                self.$container.adopt($newSlide);
+
+                // Slide current slide out
+                new Fx.Tween(self.$currentSlide, {
+                    duration  : 1000,
+                    transition: 'linear',
+                    property  : 'left'
+                }).start(0, containerSize.x);
+
+                // Slide new slide in
+                new Fx.Tween($newSlide, {
+                    duration  : 1000,
+                    transition: 'linear',
+                    property  : 'left'
+                }).start(-containerSize.x, 0);
+            }
+            else
+            {
+                self.$container.adopt($newSlide);
+            }
+
+            self.$currentSlide = $newSlide;
+        }
+        else
+        {
+            refreshRate = 100;
+        }
+
+        setTimeout(function()
+        {
+            if (self.page > 5) return;
+
+            self.start();
+        }, refreshRate);
     };
 
     /**

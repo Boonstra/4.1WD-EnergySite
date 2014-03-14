@@ -21,7 +21,7 @@ body {
   height: auto !important;
   height: 100%;
   width: 1000px;
-  margin: 0 auto -202px;
+  margin: 0 auto -176px;
   background: #ffffff;
 }
 .wrapper nav {
@@ -82,17 +82,30 @@ body {
   height: 20px;
 }
 .wrapper .push {
-  height: 202px;
+  height: 176px;
 }
 .footer {
-  height: 200px;
-  line-height: 200px;
+  height: 174px;
+  line-height: 174px;
   background: #eeeeee;
   border-top: 2px solid #7fa0b5;
 }
 .footer .inner-footer {
   width: 1000px;
   margin: 0 auto;
+}
+.footer .inner-footer .flickr-image-slider {
+  width: 150px;
+  height: 150px;
+  margin: 10px auto;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #7fa0b5;
+}
+.footer .inner-footer .flickr-image-slider .flickr-image-slide {
+  width: 150px;
+  height: 150px;
+  position: absolute;
 }
 .clear {
   clear: both;
