@@ -75,17 +75,12 @@ AUTHENTICATION_BACKENDS = (
     "allauth.account.auth_backends.AuthenticationBackend",
 )
 
-CONSTANCE_CONFIG = {
-    'MY_SETTINGS_KEY': (42, 'the answer to everything'),
-}
-
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'NAME': 'energy',
         'USER': 'root',
         'PASSWORD': 'hahaha123',
