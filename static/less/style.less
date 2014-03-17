@@ -163,7 +163,6 @@ body
 .footer
 {
   height: @footer-height - 2;
-  line-height: @footer-height - 2;
 
   background: @light-grey;
 
@@ -180,7 +179,9 @@ body
       width: 150px;
       height: 150px;
 
-      margin: 10px auto;
+      float: left;
+
+      margin: 10px 0;
 
       position: relative;
 
@@ -194,6 +195,42 @@ body
         height: 150px;
 
         position: absolute;
+      }
+    }
+
+    .flickr-image-description-container
+    {
+      height: 154px;
+      width: 154px;
+
+      float: left;
+
+      position: relative;
+
+      margin: 10px 0;
+
+      background: @blue;
+
+      .flickr-image-title
+      {
+        font-weight: bold;
+      }
+
+      .flickr-image-date
+      {
+        position: absolute;
+
+        bottom: 0;
+      }
+
+      .flickr-image-title,
+      .flickr-image-date
+      {
+        margin: 5px;
+
+        text-align: center;
+
+        color: @white;
       }
     }
   }

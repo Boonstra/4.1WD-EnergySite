@@ -86,7 +86,6 @@ body {
 }
 .footer {
   height: 174px;
-  line-height: 174px;
   background: #eeeeee;
   border-top: 2px solid #7fa0b5;
 }
@@ -97,7 +96,8 @@ body {
 .footer .inner-footer .flickr-image-slider {
   width: 150px;
   height: 150px;
-  margin: 10px auto;
+  float: left;
+  margin: 10px 0;
   position: relative;
   overflow: hidden;
   border: 2px solid #7fa0b5;
@@ -106,6 +106,27 @@ body {
   width: 150px;
   height: 150px;
   position: absolute;
+}
+.footer .inner-footer .flickr-image-description-container {
+  height: 154px;
+  width: 154px;
+  float: left;
+  position: relative;
+  margin: 10px 0;
+  background: #7fa0b5;
+}
+.footer .inner-footer .flickr-image-description-container .flickr-image-title {
+  font-weight: bold;
+}
+.footer .inner-footer .flickr-image-description-container .flickr-image-date {
+  position: absolute;
+  bottom: 0;
+}
+.footer .inner-footer .flickr-image-description-container .flickr-image-title,
+.footer .inner-footer .flickr-image-description-container .flickr-image-date {
+  margin: 5px;
+  text-align: center;
+  color: #ffffff;
 }
 .clear {
   clear: both;

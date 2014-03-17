@@ -13,8 +13,10 @@ var flickr_image_slider = function()
         self.imageBuffer       = [];
         self.requestImageTimer = null;
 
-        self.$container    = $$('.flickr-image-slider')[0];
-        self.$currentSlide = null;
+        self.$sliderContainer      = $$('.flickr-image-slider')[0];
+        self.$descriptionContainer = $$('.flickr-image-description-container')[0];
+        self.$currentSlide         = null;
+        self.$currentDescription   = null;
 
         self.startRequestingImages();
         self.start();
@@ -25,10 +27,12 @@ var flickr_image_slider = function()
      */
     self.start = function()
     {
-        var refreshRate   = self.refreshRate,
-            containerSize = self.$container.getSize(),
-            animation,
+        var refreshRate         = self.refreshRate,
+            containerSize       = self.$sliderContainer.getSize(),
+            $currentSlide       = self.$currentSlide,
+            $currentDescription = self.$currentDescription,
             $newSlide,
+            $newDescription,
             $imageLink,
             $image,
             image;
@@ -48,6 +52,11 @@ var flickr_image_slider = function()
                 'target': '_blank'
             });
 
+            // Description
+            $newDescription = new Element('div', { 'class': 'flickr-image-description' });
+            $newDescription.adopt(new Element('div', { 'text': image.title._content, 'class': 'flickr-image-title' }));
+            $newDescription.adopt(new Element('div', { 'text': image.dates.taken, 'class': 'flickr-image-date' }));
+
             // Slide
             $newSlide = new Element('div', {
                 'class' : 'flickr-image-slide'
@@ -56,7 +65,8 @@ var flickr_image_slider = function()
             $newSlide.adopt($imageLink.adopt($image));
 
             // Use the slide animation when replacing the current slide with a new one
-            if (self.$currentSlide != null)
+            if (self.$currentSlide != null &&
+                self.$currentDescription != null)
             {
                 // Hide the new slide outside the container
                 $newSlide.setStyles({
@@ -64,7 +74,13 @@ var flickr_image_slider = function()
                     'left': -containerSize.x
                 });
 
-                self.$container.adopt($newSlide);
+                $newDescription.setStyles({
+                    'opacity': 0,
+                    'visibility': 'hidden'
+                });
+
+                self.$sliderContainer.adopt($newSlide);
+                self.$descriptionContainer.adopt($newDescription);
 
                 // Slide current slide out
                 new Fx.Tween(self.$currentSlide, {
@@ -79,13 +95,25 @@ var flickr_image_slider = function()
                     transition: 'linear',
                     property  : 'left'
                 }).start(-containerSize.x, 0);
+
+                self.$currentDescription.set('tween', { duration: 1000 }).fade('out');
+
+                setTimeout(function()
+                {
+                    $currentSlide.destroy();
+                    $currentDescription.destroy();
+
+                    $newDescription.set('tween', { duration: 1000 }).fade('in');
+                }, 1000);
             }
             else
             {
-                self.$container.adopt($newSlide);
+                self.$sliderContainer.adopt($newSlide);
+                self.$descriptionContainer.adopt($newDescription);
             }
 
-            self.$currentSlide = $newSlide;
+            self.$currentSlide       = $newSlide;
+            self.$currentDescription = $newDescription;
         }
         else
         {
